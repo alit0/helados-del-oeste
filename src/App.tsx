@@ -14,6 +14,7 @@ import { Testimonials } from './components/Testimonials';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { PedidoDrawer } from './components/PedidoDrawer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 const GROUP_CATS: Record<'potes' | 'palitos', string[]> = {
   potes: ['potes-individuales', 'potes-familiares'],
@@ -113,6 +114,7 @@ export default function App() {
       </div>
 
       <Footer store={data.store} />
+      <FloatingWhatsApp />
       <BottomNav count={pedido.count} onCartClick={() => setDrawerOpen(true)} />
       <PedidoDrawer
         open={drawerOpen}
