@@ -62,7 +62,7 @@ export default function App() {
         <CategoryPills categories={data.categories} selected={selectedCat} onSelect={setSelectedCat} />
       </div>
       <div id="ofertas" className="scroll-mt-20">
-        <OfferBanner featured={data.products.filter((p) => p.featured)} />
+        <OfferBanner promos={data.promos ?? []} />
       </div>
       <FreeShippingBanner threshold={data.store.freeShippingThreshold} />
 

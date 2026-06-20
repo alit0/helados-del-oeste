@@ -86,6 +86,13 @@ export const seedCatalog: Catalog = {
     whatsapp: '+5491100000000', // replaced via Sheet later
     freeShippingThreshold: 25000,
   },
+  promos: [
+    { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta' },
+    { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá' },
+    { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'sin azúcar, apto diabéticos', cta: 'Probalo' },
+    { id: 'promo-envio', eyebrow: 'Envío gratis', title: 'Desde $25.000', subtitle: 'en todo el catálogo', cta: 'Pedí ahora' },
+    { id: 'promo-combo', eyebrow: 'Combo familiar', title: '3L + Postre', subtitle: 'a precio especial', cta: 'Ver combo' },
+  ],
   categories: [
     { id: 'palitos-agua', name: 'Palitos de Agua', icon: '🧊' },
     { id: 'palitos-crema', name: 'Palitos de Crema', icon: '🍦' },

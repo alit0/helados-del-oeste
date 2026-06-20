@@ -29,11 +29,21 @@ export interface Store {
   freeShippingThreshold: number;
 }
 
+export interface Promo {
+  id: string;
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  cta?: string;
+  bg?: string;
+}
+
 export interface Catalog {
   updatedAt: string;
   store: Store;
   categories: Category[];
   products: Product[];
+  promos?: Promo[];
 }
 
 export function isConsulta(p: Product): boolean {
