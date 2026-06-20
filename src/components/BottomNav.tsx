@@ -7,7 +7,7 @@ interface Props {
 
 export function BottomNav({ count, onCartClick }: Props) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around bg-brand-red px-2 py-2 text-white md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around rounded-t-3xl bg-brand-red px-2 py-2 text-white shadow-[0_-4px_16px_rgba(0,0,0,0.15)] md:hidden">
       <a href="#inicio" className="flex flex-col items-center gap-0.5 text-[11px] font-semibold">
         <Home className="h-5 w-5" />
         Inicio
