@@ -13,9 +13,11 @@ export function SearchBar({ value, onChange }: Props) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Buscar sabores, promos y más..."
-        className="w-full rounded-full bg-cardWhite px-5 py-3 pr-12 text-sm text-ink shadow-md outline-none placeholder:text-muted"
+        className="w-full rounded-full bg-white py-3 pl-5 pr-14 text-sm text-ink shadow-md outline-none placeholder:text-muted"
       />
-      <Search className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-brand-red" />
+      <span className="absolute right-1.5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-navy text-white">
+        <Search className="h-4 w-4" />
+      </span>
     </div>
   );
 }

@@ -20,7 +20,7 @@ describe('App', () => {
     render(<App />);
     await waitFor(() => expect(screen.getByText('Summun Frutilla')).toBeInTheDocument());
     expect(screen.getByText('Do2')).toBeInTheDocument();
-    await userEvent.click(screen.getByRole('button', { name: 'Sin TACC' }));
+    await userEvent.click(screen.getAllByRole('button', { name: 'Sin TACC' })[0]);
     await waitFor(() => expect(screen.queryByText('Do2')).toBeNull());
     expect(screen.getByText('Summun Frutilla')).toBeInTheDocument();
   });
