@@ -22,7 +22,7 @@ export function QuickFilters({ isActive, onSelect }: Props) {
             key={key}
             type="button"
             onClick={() => onSelect(key)}
-            className={`flex min-w-[80px] flex-col items-center gap-1.5 rounded-2xl border px-2 py-2 text-center text-xs font-semibold transition ${
+            className={`flex min-w-[70px] flex-col items-center gap-1.5 rounded-2xl border px-2 py-2 text-center text-xs font-semibold transition ${
               active
                 ? 'border-brand-red bg-brand-red/10 text-brand-red'
                 : 'border-black/5 bg-white text-ink shadow-sm'
