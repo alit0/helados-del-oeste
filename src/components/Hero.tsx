@@ -19,7 +19,7 @@ export function Hero({ query, onQuery }: Props) {
             </p>
           </div>
           <img
-            src="/hero.png"
+            src="/hero.webp"
             alt=""
             aria-hidden
             className="h-28 w-28 shrink-0 object-contain md:h-44 md:w-44"

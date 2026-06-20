@@ -1,10 +1,10 @@
 export type QuickFilterKey = 'ofertas' | 'potes' | 'palitos' | 'sintacc';
 
 const FILTERS: { key: QuickFilterKey; label: string; icon: string }[] = [
-  { key: 'ofertas', label: 'Ofertas', icon: '/icons/oferta.png' },
-  { key: 'potes', label: 'Potes', icon: '/icons/potes.png' },
-  { key: 'palitos', label: 'Palitos', icon: '/icons/palitos.png' },
-  { key: 'sintacc', label: 'Sin TACC', icon: '/icons/sintacc.png' },
+  { key: 'ofertas', label: 'Ofertas', icon: '/icons/oferta.webp' },
+  { key: 'potes', label: 'Potes', icon: '/icons/potes.webp' },
+  { key: 'palitos', label: 'Palitos', icon: '/icons/palitos.webp' },
+  { key: 'sintacc', label: 'Sin TACC', icon: '/icons/sintacc.webp' },
 ];
 
 interface Props {

@@ -1315,7 +1315,7 @@
       "title": "-20%",
       "subtitle": "en potes seleccionados",
       "cta": "Ver oferta",
-      "image": "/promos/promo-potes.png"
+      "image": "/promos/promo-potes.webp"
     },
     {
       "id": "promo-2x1",
@@ -1323,7 +1323,7 @@
       "title": "2x1",
       "subtitle": "en palitos de agua",
       "cta": "Aprovechá",
-      "image": "/promos/promo-2x1.png"
+      "image": "/promos/promo-2x1.webp"
     },
     {
       "id": "promo-fit",
@@ -1331,7 +1331,7 @@
       "title": "Fit Cream",
       "subtitle": "sin azúcar, apto diabéticos",
       "cta": "Probalo",
-      "image": "/promos/promo-fit.png"
+      "image": "/promos/promo-fit.webp"
     },
     {
       "id": "promo-envio",
@@ -1339,7 +1339,7 @@
       "title": "Desde $25.000",
       "subtitle": "en todo el catálogo",
       "cta": "Pedí ahora",
-      "image": "/promos/promo-envio.png"
+      "image": "/promos/promo-envio.webp"
     },
     {
       "id": "promo-combo",
@@ -1347,7 +1347,7 @@
       "title": "3L + Postre",
       "subtitle": "a precio especial",
       "cta": "Ver combo",
-      "image": "/promos/promo-combo.png"
+      "image": "/promos/promo-combo.webp"
     }
   ]
 }

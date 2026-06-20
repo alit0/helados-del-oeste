@@ -124,11 +124,11 @@ function buildCatalog() {
     categories: categories,
     products: products,
     promos: [
-      { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta', image: '/promos/promo-potes.png' },
-      { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá', image: '/promos/promo-2x1.png' },
-      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'sin azúcar, apto diabéticos', cta: 'Probalo', image: '/promos/promo-fit.png' },
-      { id: 'promo-envio', eyebrow: 'Envío gratis', title: 'Desde $25.000', subtitle: 'en todo el catálogo', cta: 'Pedí ahora', image: '/promos/promo-envio.png' },
-      { id: 'promo-combo', eyebrow: 'Combo familiar', title: '3L + Postre', subtitle: 'a precio especial', cta: 'Ver combo', image: '/promos/promo-combo.png' },
+      { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta', image: '/promos/promo-potes.webp' },
+      { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá', image: '/promos/promo-2x1.webp' },
+      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'sin azúcar, apto diabéticos', cta: 'Probalo', image: '/promos/promo-fit.webp' },
+      { id: 'promo-envio', eyebrow: 'Envío gratis', title: 'Desde $25.000', subtitle: 'en todo el catálogo', cta: 'Pedí ahora', image: '/promos/promo-envio.webp' },
+      { id: 'promo-combo', eyebrow: 'Combo familiar', title: '3L + Postre', subtitle: 'a precio especial', cta: 'Ver combo', image: '/promos/promo-combo.webp' },
     ],
   };
 }

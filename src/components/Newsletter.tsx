@@ -9,7 +9,7 @@ export function Newsletter() {
         className="mx-auto max-w-6xl rounded-card bg-brand-red bg-cover bg-center px-5 py-6 text-white"
         style={{
           backgroundImage:
-            'linear-gradient(90deg, rgba(225,27,34,0.96) 0%, rgba(225,27,34,0.78) 45%, rgba(225,27,34,0.25) 100%), url(/promos/newsletter.png)',
+            'linear-gradient(90deg, rgba(225,27,34,0.96) 0%, rgba(225,27,34,0.78) 45%, rgba(225,27,34,0.25) 100%), url(/promos/newsletter.webp)',
         }}
       >
         <h2 className="text-lg font-extrabold">Sumate a las promos</h2>
