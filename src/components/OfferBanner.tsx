@@ -50,8 +50,16 @@ export function OfferBanner({ promos }: Props) {
           {promos.map((p) => (
             <div key={p.id} className="w-full shrink-0 snap-center">
               <div
-                className="flex items-center justify-between gap-4 bg-navy p-5 text-white"
-                style={p.bg ? { background: p.bg } : undefined}
+                className="flex min-h-[160px] items-center justify-between gap-4 bg-navy bg-cover bg-center p-5 text-white"
+                style={
+                  p.image
+                    ? {
+                        backgroundImage: `linear-gradient(90deg, rgba(13,20,38,0.94) 0%, rgba(13,20,38,0.6) 45%, rgba(13,20,38,0.1) 100%), url(${p.image})`,
+                      }
+                    : p.bg
+                      ? { background: p.bg }
+                      : undefined
+                }
               >
                 <div>
                   {p.eyebrow && (
@@ -70,12 +78,14 @@ export function OfferBanner({ promos }: Props) {
                     </button>
                   )}
                 </div>
-                <div
-                  className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 text-3xl sm:flex"
-                  aria-hidden
-                >
-                  🍨
-                </div>
+                {!p.image && (
+                  <div
+                    className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 text-3xl sm:flex"
+                    aria-hidden
+                  >
+                    🍨
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -36,6 +36,7 @@ export interface Promo {
   subtitle: string;
   cta?: string;
   bg?: string;
+  image?: string;
 }
 
 export interface Catalog {
