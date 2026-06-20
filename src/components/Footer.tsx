@@ -94,9 +94,16 @@ export function Footer({ store }: Props) {
                 <AtSign className="h-4 w-4 shrink-0" />
                 {store.instagram}
               </li>
-              <li className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4 shrink-0" />
-                WhatsApp
+              <li>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5491154792502&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4 shrink-0" />
+                  WhatsApp
+                </a>
               </li>
             </ul>
           </div>
