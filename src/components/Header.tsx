@@ -1,3 +1,4 @@
+import { ShoppingCart } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface Props {
@@ -42,9 +43,9 @@ export function Header({ count, onCartClick, onSinTacc, sinTaccActive }: Props) 
           type="button"
           onClick={onCartClick}
           aria-label="Abrir mi pedido"
-          className="relative ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-lg md:ml-0"
+          className="relative ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/15 md:ml-0"
         >
-          🛒
+          <ShoppingCart className="h-5 w-5" />
           {count > 0 && (
             <span className="absolute -right-1 -top-1 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1 text-xs font-extrabold text-brand-red">
               {count}

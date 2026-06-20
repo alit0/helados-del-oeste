@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const REVIEWS = [
   { name: 'Mariana L.', text: 'Los mejores helados del oeste, con mucho sabor y atención excelente.' },
@@ -28,17 +29,17 @@ export function Testimonials() {
               type="button"
               aria-label="Comentarios anteriores"
               onClick={() => scrollByPage(-1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-cardWhite text-xl shadow-sm"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-cardWhite shadow-sm"
             >
-              ‹
+              <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               type="button"
               aria-label="Comentarios siguientes"
               onClick={() => scrollByPage(1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-cardWhite text-xl shadow-sm"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-cardWhite shadow-sm"
             >
-              ›
+              <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
@@ -50,8 +51,10 @@ export function Testimonials() {
           {REVIEWS.map((r) => (
             <div key={r.name} className="shrink-0 basis-full snap-start sm:basis-1/2 lg:basis-1/3">
               <div className="h-full rounded-card bg-cardWhite p-4 shadow-sm">
-                <div className="text-brand-red" aria-label="5 de 5 estrellas">
-                  ★★★★★
+                <div className="flex gap-0.5 text-brand-red" aria-label="5 de 5 estrellas">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
                 </div>
                 <p className="mt-2 text-sm text-ink">{r.text}</p>
                 <p className="mt-2 text-xs font-bold text-muted">{r.name}</p>

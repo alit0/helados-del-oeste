@@ -2,6 +2,7 @@ import type { Category, Product } from '../types/catalog';
 import { ProductCard } from './ProductCard';
 import { PESO_PRICES } from '../data/seed';
 import { money } from '../lib/format';
+import { CategoryIcon } from './CategoryIcon';
 
 interface Props {
   category: Category;
@@ -18,7 +19,8 @@ export function CategorySection({ category, products, color, onAdd }: Props) {
     <section className="px-4 py-4">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-3 flex items-center gap-2 text-lg font-extrabold">
-          <span>{category.icon}</span> {category.name}
+          <CategoryIcon id={category.id} className="h-5 w-5 text-brand-red" />
+          {category.name}
         </h2>
 
         {isPeso && (

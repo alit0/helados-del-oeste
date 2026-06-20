@@ -1,4 +1,5 @@
 import type { Category } from '../types/catalog';
+import { CategoryIcon } from './CategoryIcon';
 
 interface Props {
   categories: Category[];
@@ -22,7 +23,7 @@ export function CategoryPills({ categories, selected, onSelect }: Props) {
                 : 'border-transparent bg-cardWhite text-ink shadow-sm'
             }`}
           >
-            <span className="block w-full text-center text-2xl leading-none">{c.icon}</span>
+            <CategoryIcon id={c.id} className="mx-auto h-6 w-6" />
             <span className="block w-full text-center">{c.name}</span>
           </button>
         );

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { ChevronLeft, ChevronRight, IceCream } from 'lucide-react';
 import type { Promo } from '../types/catalog';
 
 interface Props {
@@ -80,10 +81,10 @@ export function OfferBanner({ promos }: Props) {
                 </div>
                 {!p.image && (
                   <div
-                    className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 text-3xl sm:flex"
+                    className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 sm:flex"
                     aria-hidden
                   >
-                    🍨
+                    <IceCream className="h-10 w-10" />
                   </div>
                 )}
               </div>
@@ -97,17 +98,17 @@ export function OfferBanner({ promos }: Props) {
               type="button"
               aria-label="Promo anterior"
               onClick={() => goTo(index - 1)}
-              className="absolute left-2 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-xl text-white opacity-0 transition group-hover:opacity-100 md:flex"
+              className="absolute left-2 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white opacity-0 transition group-hover:opacity-100 md:flex"
             >
-              ‹
+              <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               type="button"
               aria-label="Promo siguiente"
               onClick={() => goTo(index + 1)}
-              className="absolute right-2 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-xl text-white opacity-0 transition group-hover:opacity-100 md:flex"
+              className="absolute right-2 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white opacity-0 transition group-hover:opacity-100 md:flex"
             >
-              ›
+              <ChevronRight className="h-5 w-5" />
             </button>
 
             <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">

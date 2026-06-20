@@ -1,3 +1,4 @@
+import { MapPin, AtSign, MessageCircle } from 'lucide-react';
 import type { Store } from '../types/catalog';
 import { Logo } from './Logo';
 
@@ -84,10 +85,19 @@ export function Footer({ store }: Props) {
 
           <div>
             <h3 className="mb-2 text-sm font-extrabold">Contacto</h3>
-            <ul className="space-y-1 text-xs text-white/80">
-              <li>📍 {store.address}</li>
-              <li>📸 {store.instagram}</li>
-              <li>📱 WhatsApp</li>
+            <ul className="space-y-1.5 text-xs text-white/80">
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                {store.address}
+              </li>
+              <li className="flex items-center gap-2">
+                <AtSign className="h-4 w-4 shrink-0" />
+                {store.instagram}
+              </li>
+              <li className="flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 shrink-0" />
+                WhatsApp
+              </li>
             </ul>
           </div>
         </div>
