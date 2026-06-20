@@ -16,6 +16,15 @@ describe('App', () => {
     expect(screen.queryByText('Summun Frutilla')).toBeNull();
   });
 
+  it('filters to Sin Gluten products when Sin TACC is toggled', async () => {
+    render(<App />);
+    await waitFor(() => expect(screen.getByText('Summun Frutilla')).toBeInTheDocument());
+    expect(screen.getByText('Do2')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Sin TACC' }));
+    await waitFor(() => expect(screen.queryByText('Do2')).toBeNull());
+    expect(screen.getByText('Summun Frutilla')).toBeInTheDocument();
+  });
+
   it('adds a product to the order and opens the drawer', async () => {
     render(<App />);
     await waitFor(() => expect(screen.getByText('Summun Frutilla')).toBeInTheDocument());

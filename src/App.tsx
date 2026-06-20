@@ -20,6 +20,7 @@ export default function App() {
   const pedido = usePedido();
   const [query, setQuery] = useState('');
   const [selectedCat, setSelectedCat] = useState<string | null>(null);
+  const [sinTacc, setSinTacc] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const filtered = useMemo(() => {
@@ -29,9 +30,10 @@ export default function App() {
       const matchesCat = !selectedCat || p.category === selectedCat;
       const matchesQuery =
         !q || p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
-      return matchesCat && matchesQuery;
+      const matchesTacc = !sinTacc || p.tags.includes('Sin Gluten');
+      return matchesCat && matchesQuery && matchesTacc;
     });
-  }, [data, query, selectedCat]);
+  }, [data, query, selectedCat, sinTacc]);
 
   const onAdd = (p: Product) => {
     const modo: 'unidad' | 'caja' = p.priceUnit != null ? 'unidad' : 'caja';
@@ -47,10 +49,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen pb-20 md:pb-0">
-      <Header count={pedido.count} onCartClick={() => setDrawerOpen(true)} />
-      <Hero query={query} onQuery={setQuery} />
-      <CategoryPills categories={data.categories} selected={selectedCat} onSelect={setSelectedCat} />
-      <OfferBanner featured={data.products.filter((p) => p.featured)} />
+      <Header
+        count={pedido.count}
+        onCartClick={() => setDrawerOpen(true)}
+        onSinTacc={() => setSinTacc((v) => !v)}
+        sinTaccActive={sinTacc}
+      />
+      <div id="inicio" className="scroll-mt-20">
+        <Hero query={query} onQuery={setQuery} />
+      </div>
+      <div id="categorias" className="scroll-mt-20">
+        <CategoryPills categories={data.categories} selected={selectedCat} onSelect={setSelectedCat} />
+      </div>
+      <div id="ofertas" className="scroll-mt-20">
+        <OfferBanner featured={data.products.filter((p) => p.featured)} />
+      </div>
       <FreeShippingBanner threshold={data.store.freeShippingThreshold} />
 
       {data.categories

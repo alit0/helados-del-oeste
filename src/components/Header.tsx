@@ -3,30 +3,46 @@ import { Logo } from './Logo';
 interface Props {
   count: number;
   onCartClick: () => void;
+  onSinTacc: () => void;
+  sinTaccActive: boolean;
 }
 
-const NAV = ['Inicio', 'Categorías', 'Ofertas', 'Sin TACC'];
+const LINKS = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Categorías', href: '#categorias' },
+  { label: 'Ofertas', href: '#ofertas' },
+];
 
-export function Header({ count, onCartClick }: Props) {
+export function Header({ count, onCartClick, onSinTacc, sinTaccActive }: Props) {
   return (
     <header className="sticky top-0 z-40 bg-brand-red text-white shadow-md">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         <Logo className="h-11 w-11 border-2 border-white" />
         <span className="font-extrabold leading-tight md:hidden">Helados del Oeste</span>
 
-        <nav className="ml-6 hidden flex-1 items-center gap-6 text-sm font-bold md:flex">
-          {NAV.map((item) => (
-            <a key={item} href="#" className="opacity-90 hover:opacity-100">
-              {item}
+        <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-bold md:flex">
+          {LINKS.map((l) => (
+            <a key={l.label} href={l.href} className="opacity-90 transition hover:opacity-100">
+              {l.label}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={onSinTacc}
+            aria-pressed={sinTaccActive}
+            className={`transition hover:opacity-100 ${
+              sinTaccActive ? 'underline decoration-2 underline-offset-4 opacity-100' : 'opacity-90'
+            }`}
+          >
+            Sin TACC
+          </button>
         </nav>
 
         <button
           type="button"
           onClick={onCartClick}
           aria-label="Abrir mi pedido"
-          className="relative ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-lg"
+          className="relative ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-lg md:ml-0"
         >
           🛒
           {count > 0 && (
