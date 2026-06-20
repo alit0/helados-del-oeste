@@ -2,15 +2,9 @@ interface Props {
   className?: string;
 }
 
-/** Brand badge — circular crop of the real Helados del Oeste logo. */
+/** Brand badge — the real Helados del Oeste logo (transparent, already circular). */
 export function Logo({ className = '' }: Props) {
   return (
-    <div className={`overflow-hidden rounded-full bg-white ${className}`}>
-      <img
-        src="/logo.png"
-        alt="Helados del Oeste"
-        className="h-full w-full scale-[1.12] object-cover"
-      />
-    </div>
+    <img src="/logo.png" alt="Helados del Oeste" className={`object-contain ${className}`} />
   );
 }

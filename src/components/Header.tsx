@@ -17,7 +17,7 @@ export function Header({ count, onCartClick, onSinTacc, sinTaccActive }: Props) 
   return (
     <header className="sticky top-0 z-40 bg-brand-red text-white shadow-md">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
-        <Logo className="h-11 w-11 border-2 border-white" />
+        <Logo className="h-12 w-12" />
         <span className="font-extrabold leading-tight md:hidden">Helados del Oeste</span>
 
         <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-bold md:flex">
