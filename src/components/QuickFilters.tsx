@@ -14,7 +14,7 @@ interface Props {
 
 export function QuickFilters({ isActive, onSelect }: Props) {
   return (
-    <div className="flex justify-center gap-3 overflow-x-auto px-4 py-4">
+    <div className="flex justify-center gap-2 overflow-x-auto px-4 py-4">
       {FILTERS.map(({ key, label, icon }) => {
         const active = isActive(key);
         return (
