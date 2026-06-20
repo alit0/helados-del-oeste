@@ -22,8 +22,8 @@ export function CategoryPills({ categories, selected, onSelect }: Props) {
                 : 'border-transparent bg-cardWhite text-ink shadow-sm'
             }`}
           >
-            <span className="text-2xl">{c.icon}</span>
-            {c.name}
+            <span className="block w-full text-center text-2xl leading-none">{c.icon}</span>
+            <span className="block w-full text-center">{c.name}</span>
           </button>
         );
       })}
