@@ -1,18 +1,31 @@
 /**
  * Helados del Oeste — Catalog JSON API.
  *
- * Reads the "Catalogo" sheet once, caches the result, and returns the JSON
- * contract consumed by the React app. Deploy as a Web App (see README.md) and
- * point VITE_CATALOG_URL at the /exec URL.
+ * Parses the existing master sheet (HOJA MAESTRA DE PRODUCTOS Y PRECIOS) and
+ * returns the JSON contract consumed by the React app. Deploy as a Web App and
+ * point VITE_CATALOG_URL at the /exec URL. The owner keeps editing the same
+ * sheet; changes appear after the cache TTL (~5 min).
  *
- * Sheet columns (in order):
- *   categoria | nombre | descripcion | precio_unidad | caja_cantidad |
- *   precio_caja | etiquetas | imagen_url | estado | destacado
+ * Expected columns (row order, leading title/category rows are skipped):
+ *   CÓD | CATEGORÍA | PRODUCTO | DESCRIPCIÓN | LINK IMAGEN | PRECIO UNITARIO |
+ *   CANT. MAYORISTA | PRECIO x CANTIDAD | DISPONIBLE | ETIQUETA | COSTO
  */
 
-var SHEET_NAME = 'Catalogo';
-var CACHE_KEY = 'catalog_json';
+var CACHE_KEY = 'catalog_json_v2';
 var CACHE_SECONDS = 300;
+
+var ICONS = {
+  'palitos-de-agua': '🧊',
+  'palitos-de-crema': '🍦',
+  'bombones-y-premium': '🍫',
+  'vasitos-y-copas': '🥤',
+  'potes-individuales': '🍨',
+  'potes-familiares': '🪣',
+  'postres-y-tortas': '🎂',
+  'especiales': '⭐',
+  'fit-cream': '💪',
+  'sabores-por-peso': '⚖️',
+};
 
 function doGet() {
   var cache = CacheService.getScriptCache();
@@ -24,8 +37,15 @@ function doGet() {
   return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
 }
 
+function stripEmoji(s) {
+  return String(s).replace(
+    /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu,
+    '',
+  );
+}
+
 function slug(s) {
-  return String(s)
+  return stripEmoji(s)
     .toLowerCase()
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
@@ -33,74 +53,82 @@ function slug(s) {
     .replace(/(^-|-$)/g, '');
 }
 
-function num(v) {
-  return v === '' || v == null ? null : Number(v);
+function money(v) {
+  var n = String(v).replace(/[^0-9]/g, '');
+  return n === '' ? null : Number(n);
 }
 
 function buildCatalog() {
-  var sheet = SpreadsheetApp.getActive().getSheetByName(SHEET_NAME);
+  var sheet = SpreadsheetApp.getActive().getSheets()[0];
   var rows = sheet.getDataRange().getValues();
-  rows.shift(); // drop header row
 
-  var categoryNames = [];
-  var products = rows
-    .filter(function (r) {
-      return r[0] && r[1];
-    })
-    .map(function (r) {
-      var categoria = r[0];
-      var nombre = r[1];
-      var descripcion = r[2];
-      var precioUnidad = r[3];
-      var cajaCantidad = r[4];
-      var precioCaja = r[5];
-      var etiquetas = r[6];
-      var imagenUrl = r[7];
-      var estado = r[8];
-      var destacado = r[9];
+  var categories = [];
+  var seen = {};
+  var products = [];
 
-      if (categoryNames.indexOf(categoria) === -1) categoryNames.push(categoria);
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    var cod = String(r[0] || '').trim();
+    if (!/^HDO-/i.test(cod)) continue;
+    if (cod.toUpperCase() === 'HDO-P00') continue;
 
-      return {
-        id: slug(nombre),
-        category: slug(categoria),
-        name: String(nombre),
-        description: String(descripcion || ''),
-        priceUnit: num(precioUnidad),
-        boxQty: num(cajaCantidad),
-        priceBox: num(precioCaja),
-        tags: String(etiquetas || '')
-          .split(',')
-          .map(function (t) {
-            return t.trim();
-          })
-          .filter(function (t) {
-            return t.length > 0;
-          }),
-        imageUrl: imagenUrl ? String(imagenUrl) : null,
-        status:
-          String(estado || 'activo').toLowerCase() === 'proximamente' ? 'proximamente' : 'activo',
-        featured:
-          String(destacado || '').toLowerCase() === 'sí' ||
-          String(destacado || '').toLowerCase() === 'si',
-      };
+    var categoria = String(r[1] || '').trim();
+    var nombre = String(r[2] || '').trim();
+    var descripcion = String(r[3] || '').trim();
+    var imagen = String(r[4] || '').trim();
+    var disponible = String(r[8] || '').trim().toUpperCase();
+    var etiqueta = String(r[9] || '').trim();
+    if (!categoria || !nombre) continue;
+    if (disponible === 'NO') continue;
+
+    var catId = slug(categoria);
+    if (!seen[catId]) {
+      seen[catId] = true;
+      categories.push({ id: catId, name: categoria, icon: ICONS[catId] || '🍦' });
+    }
+
+    var tags = etiqueta
+      .split(',')
+      .map(function (t) {
+        return t.trim().replace(/\.+$/, '');
+      })
+      .filter(function (t) {
+        return t.length > 0;
+      });
+
+    products.push({
+      id: slug(cod),
+      category: catId,
+      name: nombre,
+      description: descripcion,
+      priceUnit: money(r[5]),
+      boxQty: String(r[6] || '').trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
+      priceBox: money(r[7]),
+      tags: tags,
+      imageUrl: imagen || null,
+      status: /pr[oó]ximamente/i.test(descripcion) ? 'proximamente' : 'activo',
+      featured: false,
     });
-
-  var categories = categoryNames.map(function (name) {
-    return { id: slug(name), name: name, icon: '🍦' };
-  });
+  }
 
   return {
     updatedAt: Utilities.formatDate(new Date(), 'GMT-3', 'yyyy-MM-dd'),
     store: {
       name: 'Helados del Oeste',
       subtitle: 'La Montevideana',
-      address: 'Blvd. J. M. de Rosas 102, Morón',
+      address: 'Blvd. Juan Manuel de Rosas 102, Morón',
       instagram: '@heladosdeloesteok',
-      whatsapp: '+5491100000000',
+      whatsapp: '+5491154792502',
       freeShippingThreshold: 25000,
     },
     categories: categories,
     products: products,
+    promos: [
+      { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta', image: '/promos/promo-potes.png' },
+      { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá', image: '/promos/promo-2x1.png' },
+      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'sin azúcar, apto diabéticos', cta: 'Probalo', image: '/promos/promo-fit.png' },
+      { id: 'promo-envio', eyebrow: 'Envío gratis', title: 'Desde $25.000', subtitle: 'en todo el catálogo', cta: 'Pedí ahora', image: '/promos/promo-envio.png' },
+      { id: 'promo-combo', eyebrow: 'Combo familiar', title: '3L + Postre', subtitle: 'a precio especial', cta: 'Ver combo', image: '/promos/promo-combo.png' },
+    ],
   };
 }
