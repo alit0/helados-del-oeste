@@ -11,9 +11,9 @@ describe('App', () => {
     await waitFor(() => expect(screen.getByText('Summun Frutilla')).toBeInTheDocument());
     expect(screen.getByRole('heading', { name: /Palitos de Agua/ })).toBeInTheDocument();
 
-    await userEvent.type(screen.getByPlaceholderText(/Buscar/i), 'almendrado');
-    await waitFor(() => expect(screen.getByText('Almendrado')).toBeInTheDocument());
-    expect(screen.queryByText('Summun Frutilla')).toBeNull();
+    await userEvent.type(screen.getByPlaceholderText(/Buscar/i), 'summun');
+    await waitFor(() => expect(screen.queryByText('Do2')).toBeNull());
+    expect(screen.getByText('Summun Frutilla')).toBeInTheDocument();
   });
 
   it('filters to Sin Gluten products when Sin TACC is toggled', async () => {

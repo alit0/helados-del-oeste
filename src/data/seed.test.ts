@@ -5,22 +5,27 @@ describe('seedCatalog', () => {
   it('has the 10 categories from the catalog', () => {
     expect(seedCatalog.categories).toHaveLength(10);
   });
-  it('includes Summun Frutilla with dual pricing', () => {
-    const p = seedCatalog.products.find((x) => x.id === 'summun-frutilla');
+
+  it('includes Summun Frutilla with dual pricing, tag and a real image url', () => {
+    const p = seedCatalog.products.find((x) => x.name === 'Summun Frutilla');
     expect(p?.priceUnit).toBe(800);
     expect(p?.priceBox).toBe(12000);
     expect(p?.boxQty).toBe(24);
     expect(p?.tags).toContain('Sin Gluten');
+    expect(p?.imageUrl).toMatch(/^https?:\/\//);
   });
+
   it('marks por-peso flavors as Consultá (null prices)', () => {
-    const p = seedCatalog.products.find((x) => x.id === 'peso-chocolate');
-    expect(p?.priceUnit).toBeNull();
-    expect(p?.priceBox).toBeNull();
+    const peso = seedCatalog.products.filter((x) => x.category === 'sabores-por-peso');
+    expect(peso.length).toBeGreaterThan(0);
+    expect(peso.every((x) => x.priceUnit === null && x.priceBox === null)).toBe(true);
   });
+
   it('has unique product ids', () => {
     const ids = seedCatalog.products.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
+
   it('only references known category ids', () => {
     const catIds = new Set(seedCatalog.categories.map((c) => c.id));
     expect(seedCatalog.products.every((p) => catIds.has(p.category))).toBe(true);
