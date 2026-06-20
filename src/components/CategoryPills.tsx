@@ -8,7 +8,7 @@ interface Props {
 
 export function CategoryPills({ categories, selected, onSelect }: Props) {
   return (
-    <div className="flex gap-3 overflow-x-auto px-4 py-4">
+    <div className="flex gap-3 overflow-x-auto px-4 py-4 md:justify-center">
       {categories.map((c) => {
         const active = selected === c.id;
         return (
