@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useCatalog } from './hooks/useCatalog';
 import { usePedido } from './hooks/usePedido';
 import { tokens } from './theme/tokens';
@@ -22,6 +22,11 @@ export default function App() {
   const [selectedCat, setSelectedCat] = useState<string | null>(null);
   const [sinTacc, setSinTacc] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (selectedCat) resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [selectedCat]);
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -66,17 +71,19 @@ export default function App() {
       </div>
       <FreeShippingBanner threshold={data.store.freeShippingThreshold} />
 
-      {data.categories
-        .filter((c) => !selectedCat || c.id === selectedCat)
-        .map((c) => (
-          <CategorySection
-            key={c.id}
-            category={c}
-            products={filtered.filter((p) => p.category === c.id)}
-            color={tokens.colors.brandRed}
-            onAdd={onAdd}
-          />
-        ))}
+      <div ref={resultsRef} className="scroll-mt-24">
+        {data.categories
+          .filter((c) => !selectedCat || c.id === selectedCat)
+          .map((c) => (
+            <CategorySection
+              key={c.id}
+              category={c}
+              products={filtered.filter((p) => p.category === c.id)}
+              color={tokens.colors.brandRed}
+              onAdd={onAdd}
+            />
+          ))}
+      </div>
 
       <Testimonials />
       <Newsletter />
