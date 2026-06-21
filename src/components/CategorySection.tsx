@@ -12,10 +12,10 @@ interface Props {
 
 export function CategorySection({ category, products, color, onAdd }: Props) {
   if (products.length === 0) return null;
-  const isPeso = category.id === 'sabores-peso';
+  const isPeso = category.id === 'sabores-por-peso';
 
   return (
-    <section className="px-4 py-4">
+    <section id={`cat-${category.id}`} className="scroll-mt-24 px-4 py-4">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-3 text-lg font-extrabold">{category.name}</h2>
 

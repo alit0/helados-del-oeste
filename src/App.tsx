@@ -28,6 +28,7 @@ export default function App() {
   const [group, setGroup] = useState<'potes' | 'palitos' | null>(null);
   const [sinTacc, setSinTacc] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [pendingCat, setPendingCat] = useState<string | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const groupCats = group ? GROUP_CATS[group] : null;
@@ -36,6 +37,21 @@ export default function App() {
     if (group || sinTacc)
       resultsRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
   }, [group, sinTacc]);
+
+  // After clearing filters, scroll to the category chosen from the header dropdown.
+  useEffect(() => {
+    if (!pendingCat) return;
+    document
+      .getElementById(`cat-${pendingCat}`)
+      ?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+    setPendingCat(null);
+  }, [pendingCat, group, sinTacc]);
+
+  const onCategory = (id: string) => {
+    setGroup(null);
+    setSinTacc(false);
+    setPendingCat(id);
+  };
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -81,6 +97,8 @@ export default function App() {
         onCartClick={() => setDrawerOpen(true)}
         onSinTacc={() => setSinTacc((v) => !v)}
         sinTaccActive={sinTacc}
+        categories={data.categories}
+        onCategory={onCategory}
       />
       <div id="inicio">
         <Hero query={query} onQuery={setQuery} />
