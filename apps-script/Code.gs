@@ -105,7 +105,7 @@ function buildCatalog() {
       boxQty: String(r[6] || '').trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
       priceBox: money(r[7]),
       tags: tags,
-      imageUrl: imagen || null,
+      imageUrl: imagen ? String(imagen) : (catId === 'sabores-por-peso' ? '/sabores/' + slug(cod) + '.webp' : null),
       status: /pr[oó]ximamente/i.test(descripcion) ? 'proximamente' : 'activo',
       featured: false,
     });

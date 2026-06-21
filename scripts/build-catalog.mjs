@@ -94,7 +94,7 @@ for (const r of rows) {
     boxQty: r[6] && String(r[6]).trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
     priceBox: money(r[7]),
     tags,
-    imageUrl: imagen || null,
+    imageUrl: imagen || (catId === 'sabores-por-peso' ? `/sabores/${slug(cod)}.webp` : null),
     status: proximamente ? 'proximamente' : 'activo',
     featured: false,
   });
