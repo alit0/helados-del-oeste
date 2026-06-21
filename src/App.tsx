@@ -21,12 +21,19 @@ const GROUP_CATS: Record<'potes' | 'palitos', string[]> = {
   palitos: ['palitos-de-agua', 'palitos-de-crema'],
 };
 
+const BADGE_OF: Record<string, string> = {
+  ofertas: 'Oferta',
+  masvendido: 'Más vendido',
+  nuevo: 'Nuevo',
+};
+
 export default function App() {
   const { data, loading, error } = useCatalog();
   const pedido = usePedido();
   const [query, setQuery] = useState('');
   const [group, setGroup] = useState<'potes' | 'palitos' | null>(null);
   const [sinTacc, setSinTacc] = useState(false);
+  const [badge, setBadge] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [pendingCat, setPendingCat] = useState<string | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -34,9 +41,9 @@ export default function App() {
   const groupCats = group ? GROUP_CATS[group] : null;
 
   useEffect(() => {
-    if (group || sinTacc)
+    if (group || sinTacc || badge)
       resultsRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
-  }, [group, sinTacc]);
+  }, [group, sinTacc, badge]);
 
   // After clearing filters, scroll to the category chosen from the header dropdown.
   useEffect(() => {
@@ -50,6 +57,7 @@ export default function App() {
   const onCategory = (id: string) => {
     setGroup(null);
     setSinTacc(false);
+    setBadge(null);
     setPendingCat(id);
   };
 
@@ -61,16 +69,23 @@ export default function App() {
       const matchesQuery =
         !q || p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
       const matchesTacc = !sinTacc || p.tags.includes('Sin Gluten');
-      return matchesGroup && matchesQuery && matchesTacc;
+      const matchesBadge =
+        !badge || (p.badge != null && p.badge.toLowerCase() === badge.toLowerCase());
+      return matchesGroup && matchesQuery && matchesTacc && matchesBadge;
     });
-  }, [data, query, groupCats, sinTacc]);
+  }, [data, query, groupCats, sinTacc, badge]);
 
-  const isActive = (key: QuickFilterKey) =>
-    key === 'sintacc' ? sinTacc : key === 'potes' || key === 'palitos' ? group === key : false;
+  const isActive = (key: QuickFilterKey) => {
+    if (key === 'ofertas' || key === 'masvendido' || key === 'nuevo') return badge === BADGE_OF[key];
+    if (key === 'potes' || key === 'palitos') return group === key;
+    if (key === 'sintacc') return sinTacc;
+    return false;
+  };
 
   const onQuickSelect = (key: QuickFilterKey) => {
-    if (key === 'ofertas') {
-      document.getElementById('ofertas')?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+    if (key === 'ofertas' || key === 'masvendido' || key === 'nuevo') {
+      const b = BADGE_OF[key];
+      setBadge((v) => (v === b ? null : b));
     } else if (key === 'sintacc') {
       setSinTacc((v) => !v);
     } else {

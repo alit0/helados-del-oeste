@@ -1,7 +1,9 @@
-export type QuickFilterKey = 'ofertas' | 'potes' | 'palitos' | 'sintacc';
+export type QuickFilterKey = 'ofertas' | 'masvendido' | 'nuevo' | 'potes' | 'palitos' | 'sintacc';
 
 const FILTERS: { key: QuickFilterKey; label: string; icon: string }[] = [
   { key: 'ofertas', label: 'Ofertas', icon: '/icons/oferta.webp' },
+  { key: 'masvendido', label: 'Más vendido', icon: '/icons/masvendido.webp' },
+  { key: 'nuevo', label: 'Nuevo', icon: '/icons/nuevo.webp' },
   { key: 'potes', label: 'Potes', icon: '/icons/potes.webp' },
   { key: 'palitos', label: 'Palitos', icon: '/icons/palitos.webp' },
   { key: 'sintacc', label: 'Sin TACC', icon: '/icons/sintacc.webp' },
@@ -14,7 +16,7 @@ interface Props {
 
 export function QuickFilters({ isActive, onSelect }: Props) {
   return (
-    <div className="flex justify-center gap-2 overflow-x-auto px-4 py-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="flex justify-start gap-2 overflow-x-auto px-4 py-4 md:justify-center [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {FILTERS.map(({ key, label, icon }) => {
         const active = isActive(key);
         return (
