@@ -12,7 +12,7 @@ const COLUMNS = [
   { title: 'Ayuda', items: ['Preguntas Frecuentes', 'Formas de Pago', 'Envíos y Retiro', 'Términos y Condiciones'] },
 ];
 
-const PAYMENTS = ['Visa', 'Mastercard', 'Maestro', 'MODO'];
+const PAYMENTS = ['Visa', 'Mastercard', 'Mercado Pago', 'MODO'];
 
 const SOCIALS: { name: string; href: string; path: string }[] = [
   {
