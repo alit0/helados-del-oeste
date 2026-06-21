@@ -8,7 +8,6 @@ import { BottomNav } from './components/BottomNav';
 import { Hero } from './components/Hero';
 import { QuickFilters, type QuickFilterKey } from './components/QuickFilters';
 import { OfferBanner } from './components/OfferBanner';
-import { FreeShippingBanner } from './components/FreeShippingBanner';
 import { CategorySection } from './components/CategorySection';
 import { Testimonials } from './components/Testimonials';
 import { Newsletter } from './components/Newsletter';
@@ -126,7 +125,6 @@ export default function App() {
         <div id="ofertas" className="scroll-mt-20">
           <OfferBanner promos={data.promos ?? []} />
         </div>
-        <FreeShippingBanner threshold={data.store.freeShippingThreshold} />
 
         <div ref={resultsRef} className="scroll-mt-24">
           {data.categories

@@ -240,7 +240,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitogranizado.png",
       "status": "activo",
-      "badge": null
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-012",
@@ -672,7 +672,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/5l-chocolate-ddl-granizado-frutilla-americana.png",
       "status": "activo",
-      "badge": null
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-037",
@@ -737,7 +737,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/almendrado-a.png",
       "status": "activo",
-      "badge": null
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-042",
@@ -802,7 +802,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tortadelbosque.png",
       "status": "activo",
-      "badge": null
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-047",
@@ -883,7 +883,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreamddlbanana.png",
       "status": "activo",
-      "badge": null
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-051",
@@ -1332,14 +1332,6 @@
       "subtitle": "sin azúcar, apto diabéticos",
       "cta": "Probalo",
       "image": "/promos/promo-fit.webp"
-    },
-    {
-      "id": "promo-envio",
-      "eyebrow": "Envío gratis",
-      "title": "Desde $25.000",
-      "subtitle": "en todo el catálogo",
-      "cta": "Pedí ahora",
-      "image": "/promos/promo-envio.webp"
     },
     {
       "id": "promo-combo",
