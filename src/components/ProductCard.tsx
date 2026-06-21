@@ -9,15 +9,27 @@ interface Props {
   onAdd: (p: Product) => void;
 }
 
+function badgeColor(badge: string): string {
+  const b = badge.toLowerCase();
+  if (b.includes('vendido')) return 'bg-brand-red';
+  if (b.includes('nuevo')) return 'bg-green-600';
+  if (b.includes('oferta')) return 'bg-amber-500';
+  return 'bg-navy';
+}
+
 export function ProductCard({ product, categoryColor, onAdd }: Props) {
   const soon = product.status === 'proximamente';
   const consulta = isConsulta(product);
 
   return (
     <div className="relative flex flex-col rounded-card bg-cardWhite p-3 shadow-sm">
-      {product.featured && (
-        <span className="absolute left-2 top-2 z-10 rounded-full bg-brand-red px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
-          Más vendido
+      {product.badge && (
+        <span
+          className={`absolute left-2 top-2 z-10 rounded-full px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-white ${badgeColor(
+            product.badge,
+          )}`}
+        >
+          {product.badge}
         </span>
       )}
 

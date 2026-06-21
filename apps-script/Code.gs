@@ -107,7 +107,7 @@ function buildCatalog() {
       tags: tags,
       imageUrl: imagen ? String(imagen) : (catId === 'sabores-por-peso' ? '/sabores/' + slug(cod) + '.webp' : null),
       status: /pr[oó]ximamente/i.test(descripcion) ? 'proximamente' : 'activo',
-      featured: false,
+      badge: String(r[11] || '').trim() || null, // column L "DESTACADO": Más vendido | Nuevo | Oferta
     });
   }
 

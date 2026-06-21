@@ -96,7 +96,7 @@ for (const r of rows) {
     tags,
     imageUrl: imagen || (catId === 'sabores-por-peso' ? `/sabores/${slug(cod)}.webp` : null),
     status: proximamente ? 'proximamente' : 'activo',
-    featured: false,
+    badge: (r[11] ?? '').trim() || null, // column L "DESTACADO": Más vendido | Nuevo | Oferta
   });
 }
 

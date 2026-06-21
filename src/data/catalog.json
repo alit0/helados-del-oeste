@@ -74,7 +74,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summun3mix.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-002",
@@ -89,7 +89,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunmixfyl.png",
       "status": "activo",
-      "featured": false
+      "badge": "Oferta"
     },
     {
       "id": "hdo-003",
@@ -104,7 +104,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunmixnya.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-004",
@@ -119,7 +119,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunfrutilla.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-005",
@@ -134,7 +134,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunlimon.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-006",
@@ -147,7 +147,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/do2.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-066",
@@ -160,7 +160,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-007",
@@ -175,7 +175,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/up.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-008",
@@ -188,7 +188,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/frutisfrutilla-a.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-059",
@@ -201,7 +201,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "proximamente",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-009",
@@ -214,7 +214,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bugy.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-010",
@@ -227,7 +227,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitoddlgranizado.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-011",
@@ -240,7 +240,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitogranizado.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-012",
@@ -253,7 +253,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitomixto.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-013",
@@ -266,7 +266,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bombom.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-058",
@@ -279,7 +279,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-063",
@@ -292,7 +292,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-064",
@@ -305,7 +305,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": "Nuevo"
     },
     {
       "id": "hdo-014",
@@ -318,7 +318,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/croc.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-015",
@@ -331,7 +331,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoamericana.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-016",
@@ -344,7 +344,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoddl.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-017",
@@ -357,7 +357,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoblanco.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-018",
@@ -370,7 +370,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cuoretwisttriple.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-019",
@@ -383,7 +383,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cuoretwistcaramel.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-060",
@@ -396,7 +396,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-025",
@@ -409,7 +409,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/alfajorhelado.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-062",
@@ -422,7 +422,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-065",
@@ -435,7 +435,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": "Nuevo"
     },
     {
       "id": "hdo-020",
@@ -450,7 +450,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribeddl.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-021",
@@ -465,7 +465,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribefrutilla.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-022",
@@ -480,7 +480,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribechocolate.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-023",
@@ -493,7 +493,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/jamaicafrutilla.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-024",
@@ -506,7 +506,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/jamaicaddl.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-061",
@@ -519,7 +519,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-026",
@@ -532,7 +532,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/chocoalpino.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-027",
@@ -545,7 +545,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/ddl.png",
       "status": "activo",
-      "featured": false
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-028",
@@ -558,7 +558,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/superflan.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-029",
@@ -571,7 +571,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/pintafrutillafrancesa.png",
       "status": "activo",
-      "featured": false
+      "badge": "Oferta"
     },
     {
       "id": "hdo-030",
@@ -586,7 +586,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-limon.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-031",
@@ -601,7 +601,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-chocolate-ddl-granizado.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-032",
@@ -616,7 +616,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-frutilla-granizado.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-033",
@@ -629,7 +629,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/3l-chocolate-ddl-granizado-frutilla-americana.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-034",
@@ -644,7 +644,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/3l-chocolate-ddl-granizado-frutilla-americana.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-035",
@@ -659,7 +659,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/5l-flan-ddl-frutilla-granizado.png",
       "status": "activo",
-      "featured": false
+      "badge": "Nuevo"
     },
     {
       "id": "hdo-036",
@@ -672,7 +672,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/5l-chocolate-ddl-granizado-frutilla-americana.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-037",
@@ -685,7 +685,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajachocobarra.png",
       "status": "activo",
-      "featured": false
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-038",
@@ -698,7 +698,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajafrutillamerengue.png",
       "status": "activo",
-      "featured": false
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-039",
@@ -711,7 +711,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajachocointenso.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-040",
@@ -724,7 +724,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajaalmendrado.png",
       "status": "activo",
-      "featured": false
+      "badge": "Oferta"
     },
     {
       "id": "hdo-041",
@@ -737,7 +737,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/almendrado-a.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-042",
@@ -750,7 +750,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/escoces3n.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-043",
@@ -763,7 +763,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/mixto.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-044",
@@ -776,7 +776,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/suizo.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-045",
@@ -789,7 +789,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tortaddl.png",
       "status": "activo",
-      "featured": false
+      "badge": "Más vendido"
     },
     {
       "id": "hdo-046",
@@ -802,7 +802,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tortadelbosque.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-047",
@@ -815,7 +815,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bombomcitos.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-048",
@@ -828,7 +828,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/superddl.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-049",
@@ -841,7 +841,7 @@
       "tags": [],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cookiescream.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-056",
@@ -854,7 +854,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "proximamente",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-057",
@@ -867,7 +867,7 @@
       "tags": [],
       "imageUrl": null,
       "status": "proximamente",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-050",
@@ -883,7 +883,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreamddlbanana.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-051",
@@ -899,7 +899,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreammascarponechocolate.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-052",
@@ -915,7 +915,7 @@
       ],
       "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreamfrutillachocolate.png",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p02",
@@ -928,7 +928,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p02.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p14",
@@ -941,7 +941,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p14.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p22",
@@ -954,7 +954,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p22.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p25",
@@ -967,7 +967,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p25.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p27",
@@ -980,7 +980,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p27.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p11",
@@ -993,7 +993,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p11.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p15",
@@ -1006,7 +1006,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p15.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p04",
@@ -1019,7 +1019,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p04.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p24",
@@ -1032,7 +1032,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p24.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p29",
@@ -1045,7 +1045,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p29.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p17",
@@ -1058,7 +1058,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p17.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p19",
@@ -1071,7 +1071,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p19.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p01",
@@ -1084,7 +1084,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p01.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p03",
@@ -1097,7 +1097,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p03.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p05",
@@ -1110,7 +1110,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p05.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p13",
@@ -1123,7 +1123,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p13.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p07",
@@ -1136,7 +1136,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p07.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p21",
@@ -1149,7 +1149,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p21.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p20",
@@ -1162,7 +1162,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p20.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p12",
@@ -1175,7 +1175,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p12.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p16",
@@ -1188,7 +1188,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p16.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p31",
@@ -1201,7 +1201,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p31.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p30",
@@ -1214,7 +1214,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p30.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p23",
@@ -1227,7 +1227,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p23.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p28",
@@ -1240,7 +1240,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p28.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p06",
@@ -1253,7 +1253,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p06.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p08",
@@ -1266,7 +1266,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p08.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p09",
@@ -1279,7 +1279,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p09.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p10",
@@ -1292,7 +1292,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p10.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     },
     {
       "id": "hdo-p18",
@@ -1305,7 +1305,7 @@
       "tags": [],
       "imageUrl": "/sabores/hdo-p18.webp",
       "status": "activo",
-      "featured": false
+      "badge": null
     }
   ],
   "promos": [

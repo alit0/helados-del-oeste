@@ -15,7 +15,7 @@ const p: Product = {
   tags: ['Sin Gluten'],
   imageUrl: null,
   status: 'activo',
-  featured: true,
+  badge: 'Más vendido',
 };
 
 describe('ProductCard', () => {

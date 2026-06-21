@@ -12,7 +12,7 @@ const base: Product = {
   tags: [],
   imageUrl: null,
   status: 'activo',
-  featured: false,
+  badge: null,
 };
 
 describe('isConsulta', () => {

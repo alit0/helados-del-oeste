@@ -11,7 +11,7 @@ export interface Product {
   tags: string[];
   imageUrl: string | null;
   status: ProductStatus;
-  featured: boolean;
+  badge: string | null;
 }
 
 export interface Category {
