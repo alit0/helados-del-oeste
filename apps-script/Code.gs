@@ -11,8 +11,19 @@
  *   CANT. MAYORISTA | PRECIO x CANTIDAD | DISPONIBLE | ETIQUETA | COSTO
  */
 
-var CACHE_KEY = 'catalog_json_v2';
+var SHEET_ID = '1k-JPaRb3SuzuHxCcS1ZkutteqKfMobtvPO7QdrufJ1M';
+var SHEET_GID = 396493507; // "HOJA MAESTRA" tab
+var CACHE_KEY = 'catalog_json_v3';
 var CACHE_SECONDS = 300;
+
+function getMasterSheet() {
+  var ss = SpreadsheetApp.openById(SHEET_ID);
+  var sheets = ss.getSheets();
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].getSheetId() === SHEET_GID) return sheets[i];
+  }
+  return sheets[0];
+}
 
 var ICONS = {
   'palitos-de-agua': '🧊',
@@ -59,7 +70,7 @@ function money(v) {
 }
 
 function buildCatalog() {
-  var sheet = SpreadsheetApp.getActive().getSheets()[0];
+  var sheet = getMasterSheet();
   var rows = sheet.getDataRange().getValues();
 
   var categories = [];
