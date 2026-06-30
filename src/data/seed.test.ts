@@ -6,13 +6,21 @@ describe('seedCatalog', () => {
     expect(seedCatalog.categories).toHaveLength(10);
   });
 
-  it('includes Summun Frutilla with dual pricing, tag and a real image url', () => {
+  it('includes Summun Frutilla with dual pricing, tag and a rehosted local image', () => {
     const p = seedCatalog.products.find((x) => x.name === 'Summun Frutilla');
     expect(p?.priceUnit).toBe(800);
     expect(p?.priceBox).toBe(12000);
     expect(p?.boxQty).toBe(24);
     expect(p?.tags).toContain('Sin Gluten');
-    expect(p?.imageUrl).toMatch(/^https?:\/\//);
+    // Product images are rehosted on our own server (no external hotlinks).
+    expect(p?.imageUrl).toMatch(/^\/productos\/.+\.webp$/);
+  });
+
+  it('has no images hotlinked from external servers (all rehosted)', () => {
+    const external = seedCatalog.products.filter(
+      (p) => p.imageUrl != null && !p.imageUrl.startsWith('/'),
+    );
+    expect(external).toHaveLength(0);
   });
 
   it('marks por-peso flavors as Consultá (null prices)', () => {

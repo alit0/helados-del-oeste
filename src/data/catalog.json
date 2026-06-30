@@ -72,7 +72,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summun3mix.png",
+      "imageUrl": "/productos/summun3mix.webp",
       "status": "activo",
       "badge": null
     },
@@ -87,7 +87,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunmixfyl.png",
+      "imageUrl": "/productos/summunmixfyl.webp",
       "status": "activo",
       "badge": "Oferta"
     },
@@ -102,7 +102,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunmixnya.png",
+      "imageUrl": "/productos/summunmixnya.webp",
       "status": "activo",
       "badge": null
     },
@@ -117,7 +117,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunfrutilla.png",
+      "imageUrl": "/productos/summunfrutilla.webp",
       "status": "activo",
       "badge": null
     },
@@ -132,7 +132,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/summunlimon.png",
+      "imageUrl": "/productos/summunlimon.webp",
       "status": "activo",
       "badge": null
     },
@@ -145,7 +145,7 @@
       "boxQty": 35,
       "priceBox": 22500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/do2.png",
+      "imageUrl": "/productos/do2.webp",
       "status": "activo",
       "badge": null
     },
@@ -173,7 +173,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/up.png",
+      "imageUrl": "/productos/up.webp",
       "status": "activo",
       "badge": null
     },
@@ -186,7 +186,7 @@
       "boxQty": 24,
       "priceBox": 28000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/frutisfrutilla-a.png",
+      "imageUrl": "/productos/frutisfrutilla-a.webp",
       "status": "activo",
       "badge": null
     },
@@ -212,7 +212,7 @@
       "boxQty": 24,
       "priceBox": 17500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bugy.png",
+      "imageUrl": "/productos/bugy.webp",
       "status": "activo",
       "badge": null
     },
@@ -225,7 +225,7 @@
       "boxQty": 24,
       "priceBox": 20500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitoddlgranizado.png",
+      "imageUrl": "/productos/cabitoddlgranizado.webp",
       "status": "activo",
       "badge": null
     },
@@ -238,7 +238,7 @@
       "boxQty": 24,
       "priceBox": 20500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitogranizado.png",
+      "imageUrl": "/productos/cabitogranizado.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -251,7 +251,7 @@
       "boxQty": 24,
       "priceBox": 17500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cabitomixto.png",
+      "imageUrl": "/productos/cabitomixto.webp",
       "status": "activo",
       "badge": null
     },
@@ -264,7 +264,7 @@
       "boxQty": 35,
       "priceBox": 33000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bombom.png",
+      "imageUrl": "/productos/bombom.webp",
       "status": "activo",
       "badge": null
     },
@@ -316,7 +316,7 @@
       "boxQty": 24,
       "priceBox": 23000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/croc.png",
+      "imageUrl": "/productos/croc.webp",
       "status": "activo",
       "badge": null
     },
@@ -329,7 +329,7 @@
       "boxQty": 12,
       "priceBox": 23000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoamericana.png",
+      "imageUrl": "/productos/tuoamericana.webp",
       "status": "activo",
       "badge": null
     },
@@ -342,7 +342,7 @@
       "boxQty": 12,
       "priceBox": 23000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoddl.png",
+      "imageUrl": "/productos/tuoddl.webp",
       "status": "activo",
       "badge": null
     },
@@ -355,7 +355,7 @@
       "boxQty": 12,
       "priceBox": 23000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tuoblanco.png",
+      "imageUrl": "/productos/tuoblanco.webp",
       "status": "activo",
       "badge": null
     },
@@ -368,7 +368,7 @@
       "boxQty": 15,
       "priceBox": 24500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cuoretwisttriple.png",
+      "imageUrl": "/productos/cuoretwisttriple.webp",
       "status": "activo",
       "badge": null
     },
@@ -381,7 +381,7 @@
       "boxQty": 15,
       "priceBox": 24500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cuoretwistcaramel.png",
+      "imageUrl": "/productos/cuoretwistcaramel.webp",
       "status": "activo",
       "badge": null
     },
@@ -407,7 +407,7 @@
       "boxQty": 16,
       "priceBox": 22500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/alfajorhelado.png",
+      "imageUrl": "/productos/alfajorhelado.webp",
       "status": "activo",
       "badge": null
     },
@@ -448,7 +448,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribeddl.png",
+      "imageUrl": "/productos/caribeddl.webp",
       "status": "activo",
       "badge": null
     },
@@ -463,7 +463,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribefrutilla.png",
+      "imageUrl": "/productos/caribefrutilla.webp",
       "status": "activo",
       "badge": null
     },
@@ -478,7 +478,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/caribechocolate.png",
+      "imageUrl": "/productos/caribechocolate.webp",
       "status": "activo",
       "badge": null
     },
@@ -491,7 +491,7 @@
       "boxQty": 18,
       "priceBox": 21000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/jamaicafrutilla.png",
+      "imageUrl": "/productos/jamaicafrutilla.webp",
       "status": "activo",
       "badge": null
     },
@@ -504,7 +504,7 @@
       "boxQty": 18,
       "priceBox": 21000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/jamaicaddl.png",
+      "imageUrl": "/productos/jamaicaddl.webp",
       "status": "activo",
       "badge": null
     },
@@ -530,7 +530,7 @@
       "boxQty": 6,
       "priceBox": 26000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/chocoalpino.png",
+      "imageUrl": "/productos/chocoalpino.webp",
       "status": "activo",
       "badge": null
     },
@@ -543,7 +543,7 @@
       "boxQty": 6,
       "priceBox": 26000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/ddl.png",
+      "imageUrl": "/productos/ddl.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -556,7 +556,7 @@
       "boxQty": 6,
       "priceBox": 26000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/superflan.png",
+      "imageUrl": "/productos/superflan.webp",
       "status": "activo",
       "badge": null
     },
@@ -569,7 +569,7 @@
       "boxQty": 6,
       "priceBox": 26000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/pintafrutillafrancesa.png",
+      "imageUrl": "/productos/pintafrutillafrancesa.webp",
       "status": "activo",
       "badge": "Oferta"
     },
@@ -584,7 +584,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-limon.png",
+      "imageUrl": "/productos/1l-limon.webp",
       "status": "activo",
       "badge": null
     },
@@ -599,7 +599,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-chocolate-ddl-granizado.png",
+      "imageUrl": "/productos/1l-chocolate-ddl-granizado.webp",
       "status": "activo",
       "badge": null
     },
@@ -614,7 +614,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/1l-frutilla-granizado.png",
+      "imageUrl": "/productos/1l-frutilla-granizado.webp",
       "status": "activo",
       "badge": null
     },
@@ -627,7 +627,7 @@
       "boxQty": 3,
       "priceBox": 38000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/3l-chocolate-ddl-granizado-frutilla-americana.png",
+      "imageUrl": "/productos/3l-chocolate-ddl-granizado-frutilla-americana.webp",
       "status": "activo",
       "badge": null
     },
@@ -642,7 +642,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/3l-chocolate-ddl-granizado-frutilla-americana.png",
+      "imageUrl": "/productos/3l-chocolate-ddl-granizado-frutilla-americana.webp",
       "status": "activo",
       "badge": null
     },
@@ -657,7 +657,7 @@
       "tags": [
         "Sin Gluten"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/5l-flan-ddl-frutilla-granizado.png",
+      "imageUrl": "/productos/5l-flan-ddl-frutilla-granizado.webp",
       "status": "activo",
       "badge": "Nuevo"
     },
@@ -670,7 +670,7 @@
       "boxQty": 2,
       "priceBox": 35000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/5l-chocolate-ddl-granizado-frutilla-americana.png",
+      "imageUrl": "/productos/5l-chocolate-ddl-granizado-frutilla-americana.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -683,7 +683,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajachocobarra.png",
+      "imageUrl": "/productos/cajachocobarra.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -696,7 +696,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajafrutillamerengue.png",
+      "imageUrl": "/productos/cajafrutillamerengue.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -709,7 +709,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajachocointenso.png",
+      "imageUrl": "/productos/cajachocointenso.webp",
       "status": "activo",
       "badge": null
     },
@@ -722,7 +722,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cajaalmendrado.png",
+      "imageUrl": "/productos/cajaalmendrado.webp",
       "status": "activo",
       "badge": "Oferta"
     },
@@ -735,7 +735,7 @@
       "boxQty": 1,
       "priceBox": 23800,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/almendrado-a.png",
+      "imageUrl": "/productos/almendrado-a.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -748,7 +748,7 @@
       "boxQty": 1,
       "priceBox": 23400,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/escoces3n.png",
+      "imageUrl": "/productos/escoces3n.webp",
       "status": "activo",
       "badge": null
     },
@@ -761,7 +761,7 @@
       "boxQty": 1,
       "priceBox": 18300,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/mixto.png",
+      "imageUrl": "/productos/mixto.webp",
       "status": "activo",
       "badge": null
     },
@@ -774,7 +774,7 @@
       "boxQty": 1,
       "priceBox": 27400,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/suizo.png",
+      "imageUrl": "/productos/suizo.webp",
       "status": "activo",
       "badge": null
     },
@@ -787,7 +787,7 @@
       "boxQty": 4,
       "priceBox": 58000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tortaddl.png",
+      "imageUrl": "/productos/tortaddl.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -800,7 +800,7 @@
       "boxQty": 4,
       "priceBox": 58000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/tortadelbosque.png",
+      "imageUrl": "/productos/tortadelbosque.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -813,7 +813,7 @@
       "boxQty": 6,
       "priceBox": 29500,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/bombomcitos.png",
+      "imageUrl": "/productos/bombomcitos.webp",
       "status": "activo",
       "badge": null
     },
@@ -826,7 +826,7 @@
       "boxQty": 6,
       "priceBox": 39000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/superddl.png",
+      "imageUrl": "/productos/superddl.webp",
       "status": "activo",
       "badge": null
     },
@@ -839,7 +839,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/cookiescream.png",
+      "imageUrl": "/productos/cookiescream.webp",
       "status": "activo",
       "badge": null
     },
@@ -881,7 +881,7 @@
         "Sin Gluten",
         "Apto diabéticos"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreamddlbanana.png",
+      "imageUrl": "/productos/fitcreamddlbanana.webp",
       "status": "activo",
       "badge": "Más vendido"
     },
@@ -897,7 +897,7 @@
         "Sin Gluten",
         "Apto diabéticos"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreammascarponechocolate.png",
+      "imageUrl": "/productos/fitcreammascarponechocolate.webp",
       "status": "activo",
       "badge": null
     },
@@ -913,7 +913,7 @@
         "Sin Gluten",
         "Apto diabéticos"
       ],
-      "imageUrl": "https://montevideanahelados.com.ar/assets/img/productos/fitcreamfrutillachocolate.png",
+      "imageUrl": "/productos/fitcreamfrutillachocolate.webp",
       "status": "activo",
       "badge": null
     },
@@ -1310,36 +1310,37 @@
   ],
   "promos": [
     {
-      "id": "promo-potes",
-      "eyebrow": "Oferta del día",
-      "title": "-20%",
-      "subtitle": "en potes seleccionados",
-      "cta": "Ver oferta",
-      "image": "/promos/promo-potes.webp"
+      "id": "promo-palito-agua",
+      "eyebrow": "Por mayor",
+      "title": "$12.000",
+      "subtitle": "Caja x24 · Palito de agua",
+      "cta": "Pedir",
+      "image": "/promos/promo-palito-agua.webp"
     },
     {
-      "id": "promo-2x1",
-      "eyebrow": "Solo esta semana",
-      "title": "2x1",
-      "subtitle": "en palitos de agua",
-      "cta": "Aprovechá",
-      "image": "/promos/promo-2x1.webp"
+      "id": "promo-bombon",
+      "eyebrow": "Por mayor",
+      "title": "$33.000",
+      "subtitle": "Caja x35 · Palito bombón",
+      "cta": "Pedir",
+      "productImage": "/productos/bombom.webp"
     },
     {
       "id": "promo-fit",
       "eyebrow": "Nuevo",
       "title": "Fit Cream",
-      "subtitle": "sin azúcar, apto diabéticos",
+      "subtitle": "Sin azúcar, apto diabéticos",
       "cta": "Probalo",
-      "image": "/promos/promo-fit.webp"
+      "image": "/promos/promo-fit.webp",
+      "productImage": "/promos/fitcream-pote.webp"
     },
     {
-      "id": "promo-combo",
-      "eyebrow": "Combo familiar",
-      "title": "3L + Postre",
-      "subtitle": "a precio especial",
-      "cta": "Ver combo",
-      "image": "/promos/promo-combo.webp"
+      "id": "promo-kilo",
+      "eyebrow": "A elección",
+      "title": "$12.000",
+      "subtitle": "Kilo de helado · gustos a elección",
+      "cta": "Pedir",
+      "image": "/promos/promo-kilo.webp"
     }
   ]
 }

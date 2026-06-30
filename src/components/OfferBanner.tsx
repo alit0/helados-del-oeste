@@ -79,13 +79,22 @@ export function OfferBanner({ promos }: Props) {
                     </button>
                   )}
                 </div>
-                {!p.image && (
-                  <div
-                    className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 sm:flex"
+                {p.productImage ? (
+                  <img
+                    src={p.productImage}
+                    alt=""
                     aria-hidden
-                  >
-                    <IceCream className="h-10 w-10" />
-                  </div>
+                    className="h-32 w-32 shrink-0 object-contain drop-shadow-xl md:h-40 md:w-40"
+                  />
+                ) : (
+                  !p.image && (
+                    <div
+                      className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 sm:flex"
+                      aria-hidden
+                    >
+                      <IceCream className="h-10 w-10" />
+                    </div>
+                  )
                 )}
               </div>
             </div>

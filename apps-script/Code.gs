@@ -48,6 +48,58 @@ function doGet() {
   return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
 }
 
+function jsonOut(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(
+    ContentService.MimeType.JSON,
+  );
+}
+
+/**
+ * Newsletter subscriptions. The React form POSTs { email } (form-encoded).
+ * Stores unique emails in the "Suscriptores" tab of the same master Sheet.
+ */
+function doPost(e) {
+  var email = '';
+  try {
+    if (e && e.parameter && e.parameter.email) {
+      email = e.parameter.email;
+    } else if (e && e.postData && e.postData.contents) {
+      try {
+        email = (JSON.parse(e.postData.contents).email) || '';
+      } catch (errJson) {
+        email = '';
+      }
+    }
+  } catch (err) {
+    email = '';
+  }
+
+  email = String(email).trim().toLowerCase();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    return jsonOut({ ok: false, error: 'invalid_email' });
+  }
+
+  var ss = SpreadsheetApp.openById(SHEET_ID);
+  var sheet = ss.getSheetByName('Suscriptores');
+  if (!sheet) {
+    sheet = ss.insertSheet('Suscriptores');
+    sheet.appendRow(['Email', 'Fecha']);
+  }
+
+  var lastRow = sheet.getLastRow();
+  if (lastRow >= 1) {
+    var existing = sheet.getRange(1, 1, lastRow, 1).getValues();
+    for (var i = 0; i < existing.length; i++) {
+      if (String(existing[i][0]).trim().toLowerCase() === email) {
+        return jsonOut({ ok: true, duplicate: true });
+      }
+    }
+  }
+
+  sheet.appendRow([email, Utilities.formatDate(new Date(), 'GMT-3', 'yyyy-MM-dd HH:mm:ss')]);
+  return jsonOut({ ok: true });
+}
+
 function stripEmoji(s) {
   return String(s).replace(
     /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu,
@@ -67,6 +119,19 @@ function slug(s) {
 function money(v) {
   var n = String(v).replace(/[^0-9]/g, '');
   return n === '' ? null : Number(n);
+}
+
+// Product images are rehosted on our own server under /productos as .webp.
+// Any La Montevideana link in the Sheet is rewritten to its local copy.
+// New products pointing at montevideanahelados.com.ar still need their image
+// downloaded + converted into public/productos/ (see scripts).
+function localImage(imagen) {
+  var s = String(imagen);
+  var m = s.match(/\/([^\/?#]+)\.(?:png|jpe?g|webp)(?:[?#].*)?$/i);
+  if (/montevideanahelados\.com\.ar/i.test(s) && m) {
+    return '/productos/' + m[1] + '.webp';
+  }
+  return s;
 }
 
 function buildCatalog() {
@@ -116,7 +181,7 @@ function buildCatalog() {
       boxQty: String(r[6] || '').trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
       priceBox: money(r[7]),
       tags: tags,
-      imageUrl: imagen ? String(imagen) : (catId === 'sabores-por-peso' ? '/sabores/' + slug(cod) + '.webp' : null),
+      imageUrl: imagen ? localImage(imagen) : (catId === 'sabores-por-peso' ? '/sabores/' + slug(cod) + '.webp' : null),
       status: /pr[oó]ximamente/i.test(descripcion) ? 'proximamente' : 'activo',
       badge: String(r[11] || '').trim() || null, // column L "DESTACADO": Más vendido | Nuevo | Oferta
     });
@@ -135,10 +200,10 @@ function buildCatalog() {
     categories: categories,
     products: products,
     promos: [
-      { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta', image: '/promos/promo-potes.webp' },
-      { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá', image: '/promos/promo-2x1.webp' },
-      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'sin azúcar, apto diabéticos', cta: 'Probalo', image: '/promos/promo-fit.webp' },
-      { id: 'promo-combo', eyebrow: 'Combo familiar', title: '3L + Postre', subtitle: 'a precio especial', cta: 'Ver combo', image: '/promos/promo-combo.webp' },
+      { id: 'promo-palito-agua', eyebrow: 'Por mayor', title: '$12.000', subtitle: 'Caja x24 · Palito de agua', cta: 'Pedir', image: '/promos/promo-palito-agua.webp' },
+      { id: 'promo-bombon', eyebrow: 'Por mayor', title: '$33.000', subtitle: 'Caja x35 · Palito bombón', cta: 'Pedir', productImage: '/productos/bombom.webp' },
+      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'Sin azúcar, apto diabéticos', cta: 'Probalo', image: '/promos/promo-fit.webp', productImage: '/promos/fitcream-pote.webp' },
+      { id: 'promo-kilo', eyebrow: 'A elección', title: '$12.000', subtitle: 'Kilo de helado · gustos a elección', cta: 'Pedir', image: '/promos/promo-kilo.webp' },
     ],
   };
 }

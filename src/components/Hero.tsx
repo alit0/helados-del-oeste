@@ -13,9 +13,9 @@ export function Hero({ query, onQuery }: Props) {
         <div className="flex items-center gap-3 md:justify-center md:gap-10">
           <Logo className="h-[4.5rem] w-[4.5rem] shrink-0 md:hidden" />
           <div className="flex-1 md:flex-none">
-            <h1 className="text-xl font-black leading-tight md:text-6xl">Armá tu antojo</h1>
+            <h1 className="text-xl font-black leading-tight md:text-6xl">Venta por mayor y menor</h1>
             <p className="mt-1 max-w-md text-xs opacity-90 md:mt-2 md:text-lg">
-              Buscá sabores, promos y opciones Sin TACC.
+              Retiro en tienda: Blvd. Juan Manuel de Rosas 102, Morón.
             </p>
           </div>
           <img

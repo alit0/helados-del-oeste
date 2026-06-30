@@ -37,6 +37,8 @@ export interface Promo {
   cta?: string;
   bg?: string;
   image?: string;
+  /** Transparent product render shown floating on the side of the banner. */
+  productImage?: string;
 }
 
 export interface Catalog {

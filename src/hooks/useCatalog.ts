@@ -1,21 +1,9 @@
 import { useEffect, useState } from 'react';
 import type { Catalog } from '../types/catalog';
 import { resolveSource } from '../data/catalogSource';
+import { CATALOG_URL } from '../data/catalogUrl';
 
 const CACHE_KEY = 'hdo.catalog.v1';
-
-// Live data source (Apps Script JSON of the master Google Sheet). The owner edits
-// the Sheet and the catalog updates. Override with VITE_CATALOG_URL; set it to ''
-// (empty) to fall back to the bundled local snapshot.
-const DEFAULT_CATALOG_URL =
-  'https://script.google.com/macros/s/AKfycbzFb00hZqN6dERNJCRrFL3nT6v5I0L2Zk6JD2pTmtrJu9AGD-HOGxnm1fM5N0DDc7WE8w/exec';
-
-const CATALOG_URL =
-  import.meta.env.VITE_CATALOG_URL !== undefined
-    ? import.meta.env.VITE_CATALOG_URL
-    : import.meta.env.MODE === 'test'
-      ? '' // tests use the bundled snapshot, never the network
-      : DEFAULT_CATALOG_URL;
 
 export function useCatalog() {
   const [data, setData] = useState<Catalog | null>(null);
