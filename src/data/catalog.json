@@ -1315,7 +1315,7 @@
       "title": "$12.000",
       "subtitle": "Caja x24 · Palito de agua",
       "cta": "Pedir",
-      "image": "/promos/promo-palito-agua.webp"
+      "productImage": "/promos/promo-palito-agua.webp"
     },
     {
       "id": "promo-bombon",
@@ -1331,7 +1331,6 @@
       "title": "Fit Cream",
       "subtitle": "Sin azúcar, apto diabéticos",
       "cta": "Probalo",
-      "image": "/promos/promo-fit.webp",
       "productImage": "/promos/fitcream-pote.webp"
     },
     {
