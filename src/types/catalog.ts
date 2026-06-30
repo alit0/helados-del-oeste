@@ -39,6 +39,10 @@ export interface Promo {
   image?: string;
   /** Transparent product render shown floating on the side of the banner. */
   productImage?: string;
+  /** When set, the CTA adds this promo to the cart at this price (modo "caja"). */
+  price?: number;
+  /** When set (and no price), the CTA navigates to this category instead. */
+  categoryId?: string;
 }
 
 export interface Catalog {

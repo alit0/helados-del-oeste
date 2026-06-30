@@ -4,9 +4,11 @@ import type { Promo } from '../types/catalog';
 
 interface Props {
   promos: Promo[];
+  onAdd?: (promo: Promo) => void;
+  onCategory?: (id: string) => void;
 }
 
-export function OfferBanner({ promos }: Props) {
+export function OfferBanner({ promos, onAdd, onCategory }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
@@ -70,10 +72,14 @@ export function OfferBanner({ promos }: Props) {
                   )}
                   <p className="mt-1 text-3xl font-black leading-none">{p.title}</p>
                   <p className="mt-1 text-sm font-semibold">{p.subtitle}</p>
-                  {p.cta && (
+                  {p.cta && (p.price != null || p.categoryId) && (
                     <button
                       type="button"
-                      className="mt-3 rounded-full bg-brand-red px-4 py-2 text-xs font-extrabold"
+                      onClick={() => {
+                        if (p.price != null) onAdd?.(p);
+                        else if (p.categoryId) onCategory?.(p.categoryId);
+                      }}
+                      className="mt-3 rounded-full bg-brand-red px-4 py-2 text-xs font-extrabold transition hover:bg-brand-redDark"
                     >
                       {p.cta}
                     </button>

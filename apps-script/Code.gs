@@ -200,10 +200,10 @@ function buildCatalog() {
     categories: categories,
     products: products,
     promos: [
-      { id: 'promo-palito-agua', eyebrow: 'Por mayor', title: '$12.000', subtitle: 'Caja x24 · Palito de agua', cta: 'Pedir', productImage: '/promos/promo-palito-agua.webp' },
-      { id: 'promo-bombon', eyebrow: 'Por mayor', title: '$33.000', subtitle: 'Caja x35 · Palito bombón', cta: 'Pedir', productImage: '/productos/bombom.webp' },
-      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'Sin azúcar, apto diabéticos', cta: 'Probalo', productImage: '/promos/fitcream-pote.webp' },
-      { id: 'promo-kilo', eyebrow: 'A elección', title: '$12.000', subtitle: 'Kilo de helado · gustos a elección', cta: 'Pedir', image: '/promos/promo-kilo.webp' },
+      { id: 'promo-palito-agua', eyebrow: 'Por mayor', title: '$12.000', subtitle: 'Caja x24 · Palito de agua', cta: 'Pedir', productImage: '/promos/promo-palito-agua.webp', price: 12000 },
+      { id: 'promo-bombon', eyebrow: 'Por mayor', title: '$33.000', subtitle: 'Caja x35 · Palito bombón', cta: 'Pedir', productImage: '/productos/bombom.webp', price: 33000 },
+      { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'Sin azúcar, apto diabéticos', cta: 'Probalo', productImage: '/promos/fitcream-pote.webp', categoryId: 'fit-cream' },
+      { id: 'promo-kilo', eyebrow: 'A elección', title: '$12.000', subtitle: 'Kilo de helado · gustos a elección', cta: 'Pedir', image: '/promos/promo-kilo.webp', price: 12000 },
     ],
   };
 }

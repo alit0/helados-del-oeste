@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useCatalog } from './hooks/useCatalog';
 import { usePedido } from './hooks/usePedido';
 import { tokens } from './theme/tokens';
-import type { Product } from './types/catalog';
+import type { Product, Promo } from './types/catalog';
 import { Header } from './components/Header';
 import { BottomNav } from './components/BottomNav';
 import { Hero } from './components/Hero';
@@ -99,6 +99,12 @@ export default function App() {
     setDrawerOpen(true);
   };
 
+  const onAddPromo = (promo: Promo) => {
+    if (promo.price == null) return;
+    pedido.add({ id: promo.id, name: promo.subtitle, modo: 'caja', precio: promo.price });
+    setDrawerOpen(true);
+  };
+
   if (loading && !data) return <div className="p-8 text-center">Cargando catálogo…</div>;
   if (error && !data)
     return <div className="p-8 text-center text-brand-red">No se pudo cargar el catálogo.</div>;
@@ -123,7 +129,7 @@ export default function App() {
           <QuickFilters isActive={isActive} onSelect={onQuickSelect} />
         </div>
         <div id="ofertas" className="scroll-mt-20">
-          <OfferBanner promos={data.promos ?? []} />
+          <OfferBanner promos={data.promos ?? []} onAdd={onAddPromo} onCategory={onCategory} />
         </div>
 
         <div ref={resultsRef} className="scroll-mt-24">
