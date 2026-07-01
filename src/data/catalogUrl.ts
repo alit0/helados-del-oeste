@@ -7,7 +7,7 @@
 // bundled local snapshot for GET and disable the network POST (used in tests).
 
 const DEFAULT_CATALOG_URL =
-  'https://script.google.com/macros/s/AKfycbzFb00hZqN6dERNJCRrFL3nT6v5I0L2Zk6JD2pTmtrJu9AGD-HOGxnm1fM5N0DDc7WE8w/exec';
+  'https://script.google.com/macros/s/AKfycbzlyyT22fhRRwikw30gVigxoW7mnpe2iKSZAOhIxz_iHzluRQqweyUd7GuIfIbCaGEiLg/exec';
 
 export const CATALOG_URL =
   import.meta.env.VITE_CATALOG_URL !== undefined
