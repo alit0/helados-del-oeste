@@ -1,4 +1,4 @@
-import type { Category, Product } from '../types/catalog';
+import type { Category, PesoPrice, Product } from '../types/catalog';
 import { ProductCard } from './ProductCard';
 import { PESO_PRICES } from '../data/seed';
 import { money } from '../lib/format';
@@ -8,11 +8,14 @@ interface Props {
   products: Product[];
   color: string;
   onAdd: (p: Product) => void;
+  /** Per-weight pricing from the catalog; falls back to PESO_PRICES when absent. */
+  pesoPrices?: PesoPrice[];
 }
 
-export function CategorySection({ category, products, color, onAdd }: Props) {
+export function CategorySection({ category, products, color, onAdd, pesoPrices }: Props) {
   if (products.length === 0) return null;
   const isPeso = category.id === 'sabores-por-peso';
+  const pesoTiers = pesoPrices && pesoPrices.length > 0 ? pesoPrices : PESO_PRICES;
 
   return (
     <section id={`cat-${category.id}`} className="scroll-mt-24 px-4 py-4">
@@ -21,7 +24,7 @@ export function CategorySection({ category, products, color, onAdd }: Props) {
 
         {isPeso && (
           <div className="mb-3 flex flex-wrap gap-2">
-            {PESO_PRICES.map(([label, price]) => (
+            {pesoTiers.map(([label, price]) => (
               <span
                 key={label}
                 className="rounded-full bg-cardWhite px-3 py-1 text-sm font-bold text-brand-red shadow-sm"

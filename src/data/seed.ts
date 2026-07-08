@@ -1,12 +1,16 @@
-import type { Catalog } from '../types/catalog';
+import type { Catalog, PesoPrice } from '../types/catalog';
 import catalog from './catalog.json';
 
-/** Shared pricing for the "Sabores por Peso" section (rendered as a section header). */
-export const PESO_PRICES = [
-  ['¼ kg', 4000],
-  ['½ kg', 6000],
-  ['1 kg', 10000],
-] as const;
+/**
+ * Fallback "Sabores por Peso" pricing, used only when the catalog does not
+ * carry `pesoPrices` (older payloads). The live prices come from the master
+ * Sheet's HDO-P00 row via `Catalog.pesoPrices`.
+ */
+export const PESO_PRICES: PesoPrice[] = [
+  ['¼ kg', 4500],
+  ['½ kg', 7000],
+  ['1 kg', 12000],
+];
 
 /**
  * Mock catalog used when VITE_CATALOG_URL is empty. Generated from the master

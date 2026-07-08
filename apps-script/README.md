@@ -15,6 +15,13 @@ app runs on a local snapshot (`src/data/catalog.json`).
 - Marks `proximamente` when the description says so; empty prices render as
   **"Consultá"** (sabores por peso).
 - Uses the `LINK IMAGEN` URL as the product photo (placeholder if empty).
+- Reads the **kilo / "Sabores por Peso" prices from row `HDO-P00`**
+  (`PRECIO UNITARIO` = ¼ kg, `CANT. MAYORISTA` = ½ kg, `PRECIO x CANTIDAD` = 1 kg)
+  and exposes them as `catalog.pesoPrices`. The section-header pills and the
+  "Kilo de helado" promo banner both read from this, so editing HDO-P00 updates
+  the site. **After changing `Code.gs` you must redeploy the Web App** (a Sheet
+  edit alone is enough for prices going forward, but the code change needs a
+  new deployment version first).
 
 ## Deploy
 

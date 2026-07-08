@@ -158,7 +158,7 @@
       "boxQty": 35,
       "priceBox": 22500,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-066.webp",
       "status": "activo",
       "badge": null
     },
@@ -199,7 +199,7 @@
       "boxQty": 24,
       "priceBox": 12000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-059.webp",
       "status": "proximamente",
       "badge": null
     },
@@ -277,7 +277,7 @@
       "boxQty": 24,
       "priceBox": 16500,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-058.webp",
       "status": "activo",
       "badge": null
     },
@@ -290,7 +290,7 @@
       "boxQty": 20,
       "priceBox": 24000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-063.webp",
       "status": "activo",
       "badge": null
     },
@@ -303,7 +303,7 @@
       "boxQty": 24,
       "priceBox": 23000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-064.webp",
       "status": "activo",
       "badge": "Nuevo"
     },
@@ -394,7 +394,7 @@
       "boxQty": 12,
       "priceBox": 20000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-060.webp",
       "status": "activo",
       "badge": null
     },
@@ -420,7 +420,7 @@
       "boxQty": 16,
       "priceBox": 26500,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-062.webp",
       "status": "activo",
       "badge": null
     },
@@ -433,7 +433,7 @@
       "boxQty": 16,
       "priceBox": 26500,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-065.webp",
       "status": "activo",
       "badge": "Nuevo"
     },
@@ -517,7 +517,7 @@
       "boxQty": 18,
       "priceBox": 20000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-061.webp",
       "status": "activo",
       "badge": null
     },
@@ -852,7 +852,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-056.webp",
       "status": "proximamente",
       "badge": null
     },
@@ -865,7 +865,7 @@
       "boxQty": 6,
       "priceBox": 50000,
       "tags": [],
-      "imageUrl": null,
+      "imageUrl": "/productos/hdo-057.webp",
       "status": "proximamente",
       "badge": null
     },
@@ -1307,6 +1307,20 @@
       "status": "activo",
       "badge": null
     }
+  ],
+  "pesoPrices": [
+    [
+      "¼ kg",
+      4500
+    ],
+    [
+      "½ kg",
+      7000
+    ],
+    [
+      "1 kg",
+      12000
+    ]
   ],
   "promos": [
     {

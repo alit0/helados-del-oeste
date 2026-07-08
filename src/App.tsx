@@ -142,6 +142,7 @@ export default function App() {
                 products={filtered.filter((p) => p.category === c.id)}
                 color={tokens.colors.brandRed}
                 onAdd={onAdd}
+                pesoPrices={data.pesoPrices}
               />
             ))}
         </div>

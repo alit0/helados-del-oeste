@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface Props {
   imageUrl: string | null;
   name: string;
@@ -5,7 +7,9 @@ interface Props {
 }
 
 export function ProductImage({ imageUrl, name, categoryColor }: Props) {
-  if (!imageUrl) {
+  const [failed, setFailed] = useState(false);
+
+  if (!imageUrl || failed) {
     return (
       <div
         data-testid="product-placeholder"
@@ -26,6 +30,7 @@ export function ProductImage({ imageUrl, name, categoryColor }: Props) {
         alt={name}
         loading="lazy"
         decoding="async"
+        onError={() => setFailed(true)}
         className="max-h-full max-w-full object-contain"
       />
     </div>

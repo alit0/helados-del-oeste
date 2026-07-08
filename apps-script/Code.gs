@@ -13,7 +13,7 @@
 
 var SHEET_ID = '1k-JPaRb3SuzuHxCcS1ZkutteqKfMobtvPO7QdrufJ1M';
 var SHEET_GID = 396493507; // "HOJA MAESTRA" tab
-var CACHE_KEY = 'catalog_json_v3';
+var CACHE_KEY = 'catalog_json_v4';
 var CACHE_SECONDS = 300;
 
 function getMasterSheet() {
@@ -121,6 +121,11 @@ function money(v) {
   return n === '' ? null : Number(n);
 }
 
+// Format an integer as Argentine pesos with dot thousands separators: 12000 -> "$12.000".
+function fmtARS(n) {
+  return '$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
 // Product images are rehosted on our own server under /productos as .webp.
 // Any La Montevideana link in the Sheet is rewritten to its local copy.
 // New products pointing at montevideanahelados.com.ar still need their image
@@ -141,12 +146,23 @@ function buildCatalog() {
   var categories = [];
   var seen = {};
   var products = [];
+  // Per-weight pricing ("Sabores por Peso") lives in the master row HDO-P00.
+  // Columns: PRECIO UNITARIO (¼ kg) | CANT. MAYORISTA (½ kg) | PRECIO x CANTIDAD (1 kg).
+  var pesoPrices = [];
 
   for (var i = 0; i < rows.length; i++) {
     var r = rows[i];
     var cod = String(r[0] || '').trim();
     if (!/^HDO-/i.test(cod)) continue;
-    if (cod.toUpperCase() === 'HDO-P00') continue;
+    if (cod.toUpperCase() === 'HDO-P00') {
+      var quarter = money(r[5]);
+      var half = money(r[6]);
+      var kilo = money(r[7]);
+      if (quarter != null) pesoPrices.push(['¼ kg', quarter]);
+      if (half != null) pesoPrices.push(['½ kg', half]);
+      if (kilo != null) pesoPrices.push(['1 kg', kilo]);
+      continue;
+    }
 
     var categoria = String(r[1] || '').trim();
     var nombre = String(r[2] || '').trim();
@@ -181,10 +197,20 @@ function buildCatalog() {
       boxQty: String(r[6] || '').trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
       priceBox: money(r[7]),
       tags: tags,
-      imageUrl: imagen ? localImage(imagen) : (catId === 'sabores-por-peso' ? '/sabores/' + slug(cod) + '.webp' : null),
+      imageUrl: imagen
+        ? localImage(imagen)
+        : catId === 'sabores-por-peso'
+          ? '/sabores/' + slug(cod) + '.webp'
+          : '/productos/' + slug(cod) + '.webp',
       status: /pr[oó]ximamente/i.test(descripcion) ? 'proximamente' : 'activo',
       badge: String(r[11] || '').trim() || null, // column L "DESTACADO": Más vendido | Nuevo | Oferta
     });
+  }
+
+  // The "Kilo" promo banner mirrors the live 1 kg price from HDO-P00.
+  var kiloPrice = null;
+  for (var k = 0; k < pesoPrices.length; k++) {
+    if (pesoPrices[k][0] === '1 kg') kiloPrice = pesoPrices[k][1];
   }
 
   return {
@@ -199,11 +225,12 @@ function buildCatalog() {
     },
     categories: categories,
     products: products,
+    pesoPrices: pesoPrices,
     promos: [
       { id: 'promo-palito-agua', eyebrow: 'Por mayor', title: '$12.000', subtitle: 'Caja x24 · Palito de agua', cta: 'Pedir', productImage: '/promos/promo-palito-agua.webp', price: 12000 },
       { id: 'promo-bombon', eyebrow: 'Por mayor', title: '$33.000', subtitle: 'Caja x35 · Palito bombón', cta: 'Pedir', productImage: '/productos/bombom.webp', price: 33000 },
       { id: 'promo-fit', eyebrow: 'Nuevo', title: 'Fit Cream', subtitle: 'Sin azúcar, apto diabéticos', cta: 'Probalo', productImage: '/promos/fitcream-pote.webp', categoryId: 'fit-cream' },
-      { id: 'promo-kilo', eyebrow: 'A elección', title: '$12.000', subtitle: 'Kilo de helado · gustos a elección', cta: 'Pedir', image: '/promos/promo-kilo.webp', price: 12000 },
+      { id: 'promo-kilo', eyebrow: 'A elección', title: kiloPrice != null ? fmtARS(kiloPrice) : '$12.000', subtitle: 'Kilo de helado · gustos a elección', cta: 'Pedir', image: '/promos/promo-kilo.webp', price: kiloPrice != null ? kiloPrice : 12000 },
     ],
   };
 }

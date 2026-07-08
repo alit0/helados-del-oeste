@@ -45,12 +45,17 @@ export interface Promo {
   categoryId?: string;
 }
 
+/** A "Sabores por Peso" tier: [label, price] e.g. ['¼ kg', 4500]. Read live from the master Sheet's HDO-P00 row. */
+export type PesoPrice = [string, number];
+
 export interface Catalog {
   updatedAt: string;
   store: Store;
   categories: Category[];
   products: Product[];
   promos?: Promo[];
+  /** Per-weight pricing for "Sabores por Peso", sourced from the Sheet (row HDO-P00). */
+  pesoPrices?: PesoPrice[];
 }
 
 export function isConsulta(p: Product): boolean {

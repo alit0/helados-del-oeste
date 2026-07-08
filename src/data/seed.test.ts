@@ -29,6 +29,15 @@ describe('seedCatalog', () => {
     expect(peso.every((x) => x.priceUnit === null && x.priceBox === null)).toBe(true);
   });
 
+  it('carries per-weight pricing (pesoPrices) sourced from the HDO-P00 row', () => {
+    expect(seedCatalog.pesoPrices).toBeDefined();
+    const labels = seedCatalog.pesoPrices!.map(([label]) => label);
+    expect(labels).toEqual(['¼ kg', '½ kg', '1 kg']);
+    expect(seedCatalog.pesoPrices!.every(([, price]) => typeof price === 'number' && price > 0)).toBe(
+      true,
+    );
+  });
+
   it('has unique product ids', () => {
     const ids = seedCatalog.products.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length);

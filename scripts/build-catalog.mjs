@@ -58,11 +58,22 @@ const rows = parseCSV(fs.readFileSync(csvPath, 'utf8'));
 const categories = [];
 const seenCat = new Set();
 const products = [];
+// Per-weight pricing ("Sabores por Peso") lives in the master row HDO-P00.
+// Columns: PRECIO UNITARIO (¼ kg) | CANT. MAYORISTA (½ kg) | PRECIO x CANTIDAD (1 kg).
+const pesoPrices = [];
 
 for (const r of rows) {
   const cod = (r[0] ?? '').trim();
   if (!/^HDO-/i.test(cod)) continue; // skip titles + category/subsection separators
-  if (cod.toUpperCase() === 'HDO-P00') continue; // "por peso" master row (prices shown as section header)
+  if (cod.toUpperCase() === 'HDO-P00') {
+    const quarter = money(r[5]);
+    const half = money(r[6]);
+    const kilo = money(r[7]);
+    if (quarter != null) pesoPrices.push(['¼ kg', quarter]);
+    if (half != null) pesoPrices.push(['½ kg', half]);
+    if (kilo != null) pesoPrices.push(['1 kg', kilo]);
+    continue; // master row itself is not a product
+  }
 
   const categoria = (r[1] ?? '').trim();
   const nombre = (r[2] ?? '').trim();
@@ -94,7 +105,11 @@ for (const r of rows) {
     boxQty: r[6] && String(r[6]).trim() ? Number(String(r[6]).replace(/[^0-9]/g, '')) : null,
     priceBox: money(r[7]),
     tags,
-    imageUrl: imagen || (catId === 'sabores-por-peso' ? `/sabores/${slug(cod)}.webp` : null),
+    imageUrl:
+      imagen ||
+      (catId === 'sabores-por-peso'
+        ? `/sabores/${slug(cod)}.webp`
+        : `/productos/${slug(cod)}.webp`),
     status: proximamente ? 'proximamente' : 'activo',
     badge: (r[11] ?? '').trim() || null, // column L "DESTACADO": Más vendido | Nuevo | Oferta
   });
@@ -112,6 +127,7 @@ const catalog = {
   },
   categories,
   products,
+  pesoPrices,
   promos: [
     { id: 'promo-potes', eyebrow: 'Oferta del día', title: '-20%', subtitle: 'en potes seleccionados', cta: 'Ver oferta', image: '/promos/promo-potes.webp' },
     { id: 'promo-2x1', eyebrow: 'Solo esta semana', title: '2x1', subtitle: 'en palitos de agua', cta: 'Aprovechá', image: '/promos/promo-2x1.webp' },
