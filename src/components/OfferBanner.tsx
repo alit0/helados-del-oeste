@@ -12,6 +12,11 @@ export function OfferBanner({ promos, onAdd, onCategory }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 
+  const triggerPromoAction = (promo: Promo) => {
+    if (promo.price != null) onAdd?.(promo);
+    else if (promo.categoryId) onCategory?.(promo.categoryId);
+  };
+
   const goTo = (i: number) => {
     const track = trackRef.current;
     if (!track || promos.length === 0) return;
@@ -50,61 +55,77 @@ export function OfferBanner({ promos, onAdd, onCategory }: Props) {
           onScroll={onScroll}
           className="flex snap-x snap-mandatory overflow-x-auto scroll-smooth rounded-card [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {promos.map((p) => (
-            <div key={p.id} className="w-full shrink-0 snap-center">
-              <div
-                className="flex min-h-[160px] items-center justify-between gap-4 bg-navy bg-cover bg-center p-5 text-white"
-                style={
-                  p.image
-                    ? {
-                        backgroundImage: `linear-gradient(90deg, rgba(13,20,38,0.94) 0%, rgba(13,20,38,0.6) 45%, rgba(13,20,38,0.1) 100%), url(${p.image})`,
-                      }
-                    : p.bg
-                      ? { background: p.bg }
+          {promos.map((p) => {
+            const isActionable = p.price != null || Boolean(p.categoryId);
+
+            return (
+              <div key={p.id} className="w-full shrink-0 snap-center">
+                <div
+                  role={isActionable ? 'button' : undefined}
+                  tabIndex={isActionable ? 0 : undefined}
+                  onClick={isActionable ? () => triggerPromoAction(p) : undefined}
+                  onKeyDown={
+                    isActionable
+                      ? (event) => {
+                          if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            triggerPromoAction(p);
+                          }
+                        }
                       : undefined
-                }
-              >
-                <div>
-                  {p.eyebrow && (
-                    <span className="text-xs font-bold uppercase tracking-wide text-white/70">
-                      {p.eyebrow}
-                    </span>
-                  )}
-                  <p className="mt-1 text-3xl font-black leading-none">{p.title}</p>
-                  <p className="mt-1 text-sm font-semibold">{p.subtitle}</p>
-                  {p.cta && (p.price != null || p.categoryId) && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (p.price != null) onAdd?.(p);
-                        else if (p.categoryId) onCategory?.(p.categoryId);
-                      }}
-                      className="mt-3 rounded-full bg-brand-red px-4 py-2 text-xs font-extrabold transition hover:bg-brand-redDark"
-                    >
-                      {p.cta}
-                    </button>
+                  }
+                  className={`flex min-h-[160px] items-center justify-between gap-4 bg-navy bg-cover bg-center p-5 text-white ${
+                    isActionable
+                      ? 'cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy'
+                      : ''
+                  }`}
+                  style={
+                    p.image
+                      ? {
+                          backgroundImage: `linear-gradient(90deg, rgba(13,20,38,0.94) 0%, rgba(13,20,38,0.6) 45%, rgba(13,20,38,0.1) 100%), url(${p.image})`,
+                        }
+                      : p.bg
+                        ? { background: p.bg }
+                        : undefined
+                  }
+                >
+                  <div>
+                    {p.eyebrow && (
+                      <span className="text-xs font-bold uppercase tracking-wide text-white/70">
+                        {p.eyebrow}
+                      </span>
+                    )}
+                    <p className="mt-1 text-3xl font-black leading-none">{p.title}</p>
+                    <p className="mt-1 text-sm font-semibold">{p.subtitle}</p>
+                    {p.cta && (p.price != null || p.categoryId) && (
+                      <span
+                        className="mt-3 inline-flex rounded-full bg-brand-red px-4 py-2 text-xs font-extrabold transition hover:bg-brand-redDark"
+                      >
+                        {p.cta}
+                      </span>
+                    )}
+                  </div>
+                  {p.productImage ? (
+                    <img
+                      src={p.productImage}
+                      alt=""
+                      aria-hidden
+                      className="h-32 w-32 shrink-0 object-contain drop-shadow-xl md:h-40 md:w-40"
+                    />
+                  ) : (
+                    !p.image && (
+                      <div
+                        className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 sm:flex"
+                        aria-hidden
+                      >
+                        <IceCream className="h-10 w-10" />
+                      </div>
+                    )
                   )}
                 </div>
-                {p.productImage ? (
-                  <img
-                    src={p.productImage}
-                    alt=""
-                    aria-hidden
-                    className="h-32 w-32 shrink-0 object-contain drop-shadow-xl md:h-40 md:w-40"
-                  />
-                ) : (
-                  !p.image && (
-                    <div
-                      className="hidden h-24 w-20 items-center justify-center rounded-card bg-white/10 sm:flex"
-                      aria-hidden
-                    >
-                      <IceCream className="h-10 w-10" />
-                    </div>
-                  )
-                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {promos.length > 1 && (
